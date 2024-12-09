@@ -1,0 +1,188 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/About"
+    },
+    {
+      "name": "Contact us",
+      "url": "/Contact"
+    },
+    {
+      "name": "Blog",
+      "url": "/Blog"
+    },
+    {
+      "name": "Vacation rentals",
+      "url": "/Vacation_rentals"
+    },
+    {
+      "name": "Tours",
+      "url": "/Tours"
+    },
+
+    {
+      "name": "Shuttles",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Shared",
+          "hasChildren": true,
+          "children": [
+            {
+              "name": "LIR - Nosara",
+              "url": "/LIR - Nosara"
+            },
+            {
+              "name": "Nosara - Tamarindo",
+              "url": "/Nosara - Tamarindo"
+            },
+            {
+              "name": "Samara - LIR",
+              "url": "/Samara - LIR"
+            },
+            {
+              "name": "Monteverde - Nosara",
+              "url": "/Monteverde - Nosara"
+            },
+            {
+              "name": "San José - Nosara",
+              "url": "/San José - Nosara"
+            }
+          ]
+        },
+        {
+          "name": "Privates",
+          "hasChildren": true,
+          "children": [
+            {
+              "name": "Samara - Nosara",
+              "url": "Samara - Nosara"
+            },
+            {
+              "name": "Samara - San José",
+              "url": "Samara - San José"
+            },
+            {
+              "name": "San José - Nosara",
+              "url": "/San José - Nosara"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Rentals",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "ATV",
+          "url": "/Service/ATV",
+          "description": "For exciting off-road adventures."
+        },
+        {
+          "name": "Golf cart",
+          "url": "/Service/Golf_cart",
+          "description": "For easy transport."
+        },
+        {
+          "name": "Car",
+          "url": "/Service/Car",
+          "description": "For efficient travel."
+        },
+        {
+          "name": "Bicycle",
+          "url": "/Service/Bicycle",
+          "description": "For eco-friendly rides."
+        }
+      ]
+    }
+
+  ],
+
+
+
+
+
+
+
+
+  "footer": [
+    {
+      "id": "5",
+      "title": "Pages",
+      "menus": [
+        {
+          "name": "Home",
+          "url": "/"
+        },
+        {
+          "name": "About",
+          "url": "/About"
+        },
+        {
+          "name": "Contact us",
+          "url": "/Contact"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "Rental",
+      "menus": [
+        {
+          "name": "Shuttle",
+          "url": "/Service/Shuttle"
+        },
+        {
+          "name": "ATV",
+          "url": "/Service/ATV"
+        },
+        {
+          "name": "Golf cart",
+          "url": "/Service/Golf_cart"
+        },
+        {
+          "name": "Car",
+          "url": "/Service/Car"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Services",
+      "menus": [
+        {
+          "name": "Vacation rentals",
+          "url": "/Vacation_rentals"
+        },
+        {
+          "name": "Tours",
+          "url": "/Tours"
+        }
+      ]
+    }
+  ],
+
+  "footerCopyright": [
+    {
+      "name": "Privacy & Policy",
+      "url": "/Privacy-policy"
+    },
+    {
+      "name": "Terms & conditions",
+      "url": "/Terms-conditions"
+    },
+    {
+      "name": "Cookies Policy",
+      "url": "/Cookies-policy"
+    }
+  ]
+
+}
