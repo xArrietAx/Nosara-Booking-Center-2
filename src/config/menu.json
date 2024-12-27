@@ -27,7 +27,6 @@
 
     {
       "name": "Shuttles",
-      "url": "",
       "hasChildren": true,
       "children": [
         {
@@ -95,11 +94,6 @@
           "name": "Car",
           "url": "/Service/Car",
           "description": "For efficient travel."
-        },
-        {
-          "name": "Bicycle",
-          "url": "/Service/Bicycle",
-          "description": "For eco-friendly rides."
         }
       ]
     }
@@ -107,17 +101,10 @@
   ],
 
 
-
-
-
-
-
-
   "footer": [
     {
-      "id": "5",
       "title": "Pages",
-      "menus": [
+      "children": [
         {
           "name": "Home",
           "url": "/"
@@ -133,13 +120,8 @@
       ]
     },
     {
-      "id": "1",
       "title": "Rental",
-      "menus": [
-        {
-          "name": "Shuttle",
-          "url": "/Service/Shuttle"
-        },
+      "children": [
         {
           "name": "ATV",
           "url": "/Service/ATV"
@@ -155,9 +137,8 @@
       ]
     },
     {
-      "id": "4",
       "title": "Services",
-      "menus": [
+      "children": [
         {
           "name": "Vacation rentals",
           "url": "/Vacation_rentals"
@@ -165,10 +146,17 @@
         {
           "name": "Tours",
           "url": "/Tours"
+        },
+        {
+          "name": "Shuttle",
+          "url": "/Shuttle"
         }
       ]
     }
   ],
+
+
+
 
   "footerCopyright": [
     {
@@ -185,4 +173,6 @@
     }
   ]
 
+
+  
 }

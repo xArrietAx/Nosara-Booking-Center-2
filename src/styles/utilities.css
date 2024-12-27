@@ -8,6 +8,44 @@
     margin-left: auto;
 }
 
+.section-space{
+    @apply my-36
+}
+
+.bg-hover {
+    @apply p-1 rounded transition-colors duration-300;
+
+    &:hover {
+        @apply bg-primary text-white cursor-pointer
+    }
+
+}
+
+.bg-hover-secondary {
+    @apply p-1 rounded transition-colors duration-300;
+
+    &:hover {
+        @apply bg-secondary text-black cursor-pointer
+    }
+}
+
+.link {
+    @apply cursor-pointer transition-colors duration-300 hover:text-text;
+}
+
+.link-reverse {
+    @apply text-text cursor-pointer transition-colors duration-300 hover:text-black;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -15,19 +53,19 @@
 }
 
 @media (min-width: 576px) {
-    .container, .container-sm {
+    .container {
         max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
-    .container, .container-md, .container-sm {
+    .container {
         max-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
-    .container, .container-lg, .container-md, .container-sm {
+    .container {
         max-width: 960px;
     }
 }
@@ -42,30 +80,4 @@
     .container {
         max-width: 1248px;
     }
-}
-
-
-.bg-hover {
-    @apply p-1 rounded transition-colors duration-300;
-
-    &:hover {
-        @apply bg-primary text-white cursor-pointer
-    }
-}
-
-.bg-hover-secondary {
-    @apply p-1 rounded transition-colors duration-300;
-
-    &:hover {
-        @apply bg-secondary text-black cursor-pointer
-    }
-}
-
-.no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
 }

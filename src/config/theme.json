@@ -2,6 +2,7 @@
     "colors": {
       "primary": "#000",
       "secondary": "#f2f4f6",
+      "sectionBg": "#f9fafb",
       "text": "#737373",
       "border": "#e4e6e8"
     }

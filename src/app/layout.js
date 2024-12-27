@@ -1,7 +1,8 @@
+import { ContextProvider } from "@/context/useContext";
 import { Manrope } from "next/font/google";
 import { Header } from "@/shared/Header";
+import { Footer } from "@/shared/Footer";
 import "@/styles/main.css";
-import { ContextProvider } from "@/context/useContext";
 
 const manrope = Manrope({
   weight: ["400", "500", "700", "800"],
@@ -19,8 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={manrope.className}>
       <body>
         <ContextProvider>
-        <Header />
+        <Header /> 
         {children}
+        <Footer />
         </ContextProvider>
       </body>
     </html>

@@ -7,23 +7,23 @@ export function Shuttle({ pickUp, setPickUp, pickUpLocation, setPickUpLocation, 
   return (
     <>
       <div className="flex flex-col gap-3 px-7 py-5 border-b border-border font-bold sm:border-0 xl:py-0">
-        <span className="text-sm text-text">Pick up location</span>
+        <span className="text-sm-bold text-text">Pick up location</span>
         <Input value={pickUpLocation} setValue={setPickUpLocation} Icon={<MdLocationPin className="text-text size-[1.1rem]" />} placeholder="City or airport" />
       </div>
 
       <div className="flex flex-col gap-3 px-7 py-5 border-b border-border font-bold sm:border-0 xl:py-0">
-        <span className="text-sm text-text">Drop off location</span>
+        <span className="text-sm-bold text-text">Drop off location</span>
         <Input value={dropOffLocation} setValue={setDropOffLocation} Icon={<MdLocationPin className="text-text size-[1.1rem]" />} placeholder="City or airport" />
       </div>
 
       <div className="flex flex-col gap-3 px-7 py-5 border-b border-border font-bold sm:border-0 xl:py-0">
-        <span className="text-sm text-text">Date</span>
+        <span className="text-sm-bold text-text">Date</span>
         <Datepicker selected={pickUp} setSelected={setPickUp} />
       </div>
 
       <div className="flex flex-col gap-3 px-7 py-5 border-b border-border font-bold sm:border-0 xl:py-0">
-        <span className="text-sm text-text">Guests</span>
-        <Select placeholder={`${ adults + childrens === 0 ? "Add" : adults + childrens } guests`} Icon={<MdPerson className="text-text size-[1.1rem]" />} >
+        <span className="text-sm-bold text-text">Guests</span>
+        <Select value={adults + childrens === 0 ? "" : `${adults + childrens} guests`} placeholder="Add guests" Icon={<MdPerson className="text-text size-[1.1rem]" />} >
         <div className="space-y-5 w-">
         <Guests label="Adults" value={adults} setValue={setAdults} max={100} min={1}  />
         <Guests label="Children" value={childrens} setValue={setChildrens} max={100} min={0} />

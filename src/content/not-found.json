@@ -1,0 +1,41 @@
+{
+    "hero": {
+        "title":{
+            "one":"We",
+            "two":"Can’t Find",
+            "three":"This Page"
+        },
+        "desc":"The page you are looking for doesn’t exist or has been moved",
+        "btns": {
+            "one":"Go Back",
+            "two":"Help center"
+        },
+        "img": "/404/404.webp",
+        "cards":[
+            {
+                "title": "Shuttles",
+                "desc": "Book reliable shuttles for your travels.",
+                "url": "/Shuttles",
+                "icon": "LuBus"
+            },
+            {
+                "title": "Vacation Rentals",
+                "desc": "Find cozy rentals for your stay.",
+                "url": "/Vacation_rentals",
+                "icon": "LuHouse"
+            },
+            {
+                "title": "Tours",
+                "desc": "Plan exciting tours with ease.",
+                "url": "/Tours",
+                "icon": "LuMountain"
+            },
+            {
+                "title": "Our Blog",
+                "desc": "Read the latest articles from our blog",
+                "url": "/Blog",
+                "icon": "LuFolderOpen"
+            }
+        ]
+    }
+}

@@ -22,9 +22,13 @@ module.exports = {
       colors: {
         primary: colors.colors.primary,
         secondary: colors.colors.secondary,
+        sectionBg: colors.colors.sectionBg,
         text: colors.colors.text,
         border: colors.colors.border
       },
+      boxShadow: {
+        'card': '0 6px 22px 0 rgba(0, 0, 0, .09)',
+      }
     },
   },
   plugins: [],

@@ -1,47 +1,53 @@
-import classNames from 'classnames';
+import classNames from "classnames";
 
-export function Button({ 
-  children, 
-  className, 
-  color = 'primary', 
-  size = 'md', 
-  isIconOnly = false, 
-  variant = 'default',
+export function Button({
+  children,
+  className,
+  hover,
+  size = "md",
+  isIconOnly = false,
+  variant = "primary",
   as = "button",
-  ...props 
+  radius = "full",
+  ...props
 }) {
-
-  const Tag = as
-
-  const baseClass = "inline-flex items-center justify-center gap-2 rounded-full transition duration-300";
-
-  const colorClasses = {
-    primary: "bg-primary text-white",
-    secondary: "bg-secondary",
-  };
-
-  const variantClasses = {
-    ghost: "!bg-transparent !text-black hover:!bg-secondary",
-    outline: "border border-primary !text-black bg-transparent hover:!text-white hover:bg-primary",
-  };
-
-  const sizeClasses = {
-    sm: isIconOnly ? "w-8 h-8" : "h-8 px-3 py-1.5 text-sm",
-    md: isIconOnly ? "w-10 h-10" : "h-10 px-5 py-2.5 text-base",
-    lg: isIconOnly ? "w-12 h-12" : "h-12 px-6 py-3 text-lg",
-  };
+  const Tag = as;
 
   const buttonClass = classNames(
-    baseClass,
-    sizeClasses[size],
-    colorClasses[color],
-    variantClasses[variant],
+    "inline-flex items-center justify-center gap-2 border-border font-bold transition-all duration-300",
+    {
+      "rounded-full": radius === "full",
+      "rounded": radius === "smooth",
+      "rounded-none": radius === "none",
+
+      "text-white bg-primary": variant === "primary",
+      "bg-secondary": variant === "secondary",
+      "border  hover:text-white hover:bg-primary": variant === "outline",
+      "bg-transparent hover:bg-secondary": variant === "ghost",
+
+      
+
+      "hover:!text-white hover:!bg-primary": hover === "primary",
+      "hover:!text-black hover:!bg-secondary": hover === "secondary",
+      "border hover:!text-black hover:!bg-transparent": hover === "outline",
+      "border-0 hover:border hover:!text-black hover:!bg-transparent": hover === "outline" && variant === "ghost",
+      "hover:!border-0 hover:!text-black hover:!bg-transparent": hover === "ghost",
+
+
+      "px-[1.125rem] py-2 text-sm": size === "sm",
+      "px-[1.375rem] py-3": size === "md" && !isIconOnly,
+      "px-[1.625rem] py-4": size === "lg",
+    
+      "w-8 h-8": isIconOnly === "sm",
+      "w-10 h-10": isIconOnly,
+      "w-12 h-12": isIconOnly === "lg",
+    },
     className
   );
 
   return (
-    <Tag className={buttonClass} {...props}>
-      {children}
-    </Tag>
+      <Tag className={buttonClass} {...props}>
+        {children}
+      </Tag>
   );
 }

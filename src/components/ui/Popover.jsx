@@ -64,7 +64,7 @@ const PopoverTrigger = ({ children, className, as = "button", ...props }) => {
 };
 
 const PopoverContent = ({ children, className, classNameWrapper }) => {
-  const { isOpen } = useContext(PopoverContext);
+  const { isOpen, setIsOpen } = useContext(PopoverContext);
 
   return (
     <AnimatePresence>
@@ -77,7 +77,7 @@ const PopoverContent = ({ children, className, classNameWrapper }) => {
           transition={{ duration: 0.2 }}
           className={`p-3 border border-border rounded-lg bg-white shadow-2xl ${className}`}
         >
-          {children}
+          {  typeof children === "function" ? children({ isOpen, setIsOpen }) : children}
         </motion.div>
         </div>
       )}

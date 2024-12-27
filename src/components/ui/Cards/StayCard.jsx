@@ -1,0 +1,45 @@
+import { MdOutlineBathtub, MdOutlineBed, MdPerson } from "@/icons/index";
+import { Button } from "../Button";
+import Link from "next/link";
+import Image from "next/image";
+
+export function StayCard({ data }) {
+
+  const { id, name, information, galleryImages, price, beds, baths, maxGuests } = data
+
+  return (
+    <div className="border border-border rounded-[2rem] overflow-hidden transition-shadow duration-300 hover:shadow-card">
+      <div className="relative h-80">
+        <Image src={galleryImages[0]} width={900} height={600} alt={name} className="w-full h-full object-cover" />
+      </div>
+      <div className="relative py-5 px-4 rounded-tr-[2rem] rounded-tl-[2rem] -mt-10 bg-white 2xl:py-9 2xl:px-7">
+        <div className="flex flex-col gap-3">
+        <span className="heading-6">{name}</span>
+        <div className="flex items-center gap-3 text-md-medium text-text">
+        <span className="flex items-center gap-1">
+            <MdOutlineBed className="size-5" /> {beds} beds
+          </span>
+          <span className="flex items-center gap-1">
+            <MdOutlineBathtub className="size-5" /> {baths} bath
+          </span>
+          <span className="flex items-center gap-1">
+            <MdPerson className="size-5" /> {maxGuests} guest
+          </span>
+        </div>
+        <p className="font-medium text-text line-clamp-2">{information}</p>
+        </div>
+
+
+        <div className="flex items-center justify-between mt-6">
+          <div className="flex items-center gap-1">
+            <h6 className="heading-6">${price}</h6>
+            <p className="text-md-medium text-text">/ night</p>
+          </div>
+          <div className="card-button">
+            <Button as={Link} href={`/Vacation_rentals/${name.replace(/ /g, "-")}/${id}`} size="sm"  variant="secondary" hover="primary" className="border border-border" >Book now</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,35 +1,35 @@
-.heading-1,.heading-2,.heading-3,.heading-4,.heading-5,.heading-6 {
+.heading-1,.heading-2,.heading-3,.heading-4,.heading-5,.heading-6,h1,h2,h3,h4,h5,h6 {
     font-weight: 800
 }
 
-.heading-1 {
-    font-size: 56px;
-    line-height: 68px;
+.heading-1,h1 {
+    font-size: 64px;
+    line-height: 76px
 }
 
-.heading-2 {
-    font-size: 46px;
-    line-height: 60px;
+.heading-2,h2 {
+    font-size: 52px;
+    line-height: 76px
 }
 
-.heading-3 {
-    font-size: 38px;
-    line-height: 50px;
+.heading-3,h3 {
+    font-size: 44px;
+    line-height: 58px
 }
 
-.heading-4 {
-    font-size: 32px;
-    line-height: 42px;
+.heading-4,h4 {
+    font-size: 36px;
+    line-height: 48px
 }
 
-.heading-5 {
-    font-size: 26px;
-    line-height: 34px;
+.heading-5,h5 {
+    font-size: 28px;
+    line-height: 36px
 }
 
-.heading-6 {
-    font-size: 22px;
-    line-height: 30px;
+.heading-6,h6 {
+    font-size: 24px;
+    line-height: 32px
 }
 
 .heading-1-regular {
@@ -80,40 +80,188 @@
     font-weight: 500
 }
 
+.text-label,.text-lg,.text-md,.text-sm,.text-xl {
+    font-weight: 500
+}
 
+.text-xs,.text-xs-bold,.text-xs-medium {
+    font-size: 12px;
+    line-height: 18px
+}
 
-@media (max-width: 575.98px) {
-    .heading-1 {
-        font-size: 46px;
-        line-height: 58px;
+.text-sm,.text-sm-bold,.text-sm-medium {
+    font-size: 14px;
+    line-height: 22px
+}
+
+.text-md,.text-md-bold,.text-md-medium {
+    font-size: 16px;
+    line-height: 26px
+}
+
+.text-lg,.text-lg-bold,.text-lg-medium {
+    font-size: 18px;
+    line-height: 28px
+}
+
+.text-xl,.text-xl-bold,.text-xl-medium {
+    font-size: 20px;
+    line-height: 32px
+}
+
+.text-lg-bold,.text-md-bold,.text-sm-bold,.text-xl-bold,.text-xs-bold {
+    font-weight: 700 !important
+}
+
+.text-lg-medium,.text-md-medium,.text-sm-medium,.text-xl-medium,.text-xs-medium {
+    font-weight: 500
+}
+
+.text-label {
+    font-size: 22px;
+    line-height: 27px
+}
+
+.text-15-medium {
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 500;
+}
+
+.text-20-medium {
+    line-height: 26px
+}
+
+.text-24-semibold {
+    line-height: 29px;
+    font-weight: 600;
+    letter-spacing: 3%
+}
+
+.text-24-bold,.text-24-semibold {
+    font-size: 24px;
+}
+
+.text-24-bold {
+    line-height: 34px;
+    font-weight: 700
+}
+
+.text-22-bold {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+.text-20-medium {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+.text-18-bold {
+    font-size: 18px;
+    line-height: 28px
+}
+
+.text-16-bold,.text-18-bold {
+    font-weight: 700;
+}
+
+.text-16-bold {
+    font-size: 16px;
+    line-height: 16px
+}
+
+.text-18-semibold {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.text-32-bold {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 700;
+}
+
+.text-48-semibold {
+    font-size: 48px;
+    line-height: 55px
+}
+
+.text-48-semibold,.text-88-semibold {
+    font-weight: 600;
+}
+
+.text-88-semibold {
+    font-size: 88px;
+    line-height: 76px
+}
+
+.text-96 {
+    font-size: 96px!important;
+    line-height: 103px!important;
+    font-weight: 400!important;
+}
+
+@media (max-width: 1599.98px) {}
+
+@media (max-width: 1399.98px) { }
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 767.98px) { 
+    .text-86-bold {
+        font-size: 66px;
+        line-height: 76px
     }
 
-    .heading-2 {
-        font-size: 36px;
-        line-height: 48px;
+    .text-64-medium {
+        font-size: 44px;
+        line-height: 56px
+    }
+}
+
+@media (max-width: 575.98px) {
+    .heading-1,h1 {
+        font-size: 54px;
+        line-height: 66px
+    }
+    .heading-2,h2 {
+        font-size: 42px;
+        line-height: 60px
     }
 }
 
 @media (max-width: 499.98px) {
-    .heading-1 {
-        font-size: 40px;
-        line-height: 50px;
-    }
-
-    .heading-6 {
-        font-size: 18px;
-        line-height: 26px;
+    .heading-1,h1 {
+        font-size: 44px;
+        line-height: 56px
     }
 }
 
 @media (max-width: 449.98px) {
-    .heading-3 {
-        font-size: 30px;
-        line-height: 40px;
+    .heading-3,h3 {
+        font-size: 34px;
+        line-height: 48px
     }
-
-    .heading-4 {
+    .heading-4,h4 {
         font-size: 24px;
-        line-height: 34px;
+        line-height: 34px
     }
 }
+
+@media (max-width: 374.98px) {}
+
+@media (max-width: 339.98px) {}
+
+@media (min-width: 1400px) {}
+
+@media screen and (min-width: 1200px) and (max-width:1440px) {}
+
+@media screen and (min-width: 1400px) and (max-width:1610px) {}
+
+@media screen and (min-width: 1200px) and (max-width:1399.98px) {}

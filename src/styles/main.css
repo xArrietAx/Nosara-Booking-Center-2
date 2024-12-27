@@ -1,7 +1,11 @@
 @import url("./base.css");
 @import url("./globals.css");
 @import url("./utilities.css");
-@import url("./ReactDayPicker.css");
+@import url("./ReactDatePicker.css");
+@import url("swiper/css");
+@import url("swiper/css/navigation");
+@import url("swiper/css/pagination");
+@import url("./Swiper.css");
 
 @tailwind base;
 @tailwind components;

@@ -3,6 +3,6 @@ export function Input({ value, setValue, Icon, placeholder }) {
     <div>
     {Icon}
     </div>
-    <input type="text" placeholder={placeholder} className="w-full outline-none cursor-pointer placeholder:text-black" value={value} onChange={e => setValue(e.target.value)} />
+    <input type="text" required placeholder={placeholder} className="w-full font-bold outline-none cursor-pointer bg-transparent placeholder:text-black" value={value} onChange={e => setValue(e.target.value)} />
   </div>
 }

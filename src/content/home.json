@@ -1,0 +1,145 @@
+{
+  "hero": {
+    "title": "Your Gateway to Adventures in Nosara",
+    "desc": {
+      "one": "We offer vacation rentals, tours, shuttles, and a variety of rentals,",
+      "two": "including ATVs, golf carts, and cars in Nosara"
+    },
+    "bg-img": "home/banner.webp",
+    "btnInfo": {
+      "text": "Explore Nosara",
+      "img": "/home/palm_emoji.webp"
+    }
+  },
+
+  "stays": {
+    "title": "Featured places to stay",
+    "desc": "Discover our options for accommodation in Nosara"
+  },
+
+  "destinations": {
+    "title": "Your next adventure awaits",
+    "desc": "Explore the most popular destinations for your next adventure",
+    "cards": [
+      {
+        "name": "Liberia",
+        "duration": 3,
+        "img": "/home/Liberia.webp",
+        "url": "/"
+      },
+      {
+        "name": "San José",
+        "duration": 6,
+        "img": "/home/SanJose.webp",
+        "url": "/"
+      },
+      {
+        "name": "Flamingo",
+        "duration": 3,
+        "img": "/home/Flamingo.webp",
+        "url": "/"
+      },
+      {
+        "name": "Tamarindo",
+        "duration": 3,
+        "img": "/home/Tamarindo.webp",
+        "url": "/"
+      },
+      {
+        "name": "Monteverde",
+        "duration": 4,
+        "img": "/home/Monteverde.webp",
+        "url": "/"
+      },
+      {
+        "name": "Jacó",
+        "duration": 4,
+        "img": "/home/Jacó.webp",
+        "url": "/"
+      },
+      {
+        "name": "La Fortuna",
+        "duration": 4,
+        "img": "/home/Fortuna.webp",
+        "url": "/"
+      },
+      {
+        "name": "Samara",
+        "duration": 1,
+        "img": "/home/Samara.webp",
+        "url": "/"
+      }
+    ]
+  },
+
+  "whyNosara": {
+    "title": "Discover the natural beauty of Nosara",
+    "desc": "Relax, explore, and connect with Nosara's stunning beaches, lush wildlife, and serene natural surroundings",
+    "btnInfo": {
+      "text": "Why Visit Nosara",
+      "img": "/home/beach_emoji.webp"
+    },
+    "statistics": [
+      {
+        "quantity": "45+",
+        "desc": {
+          "one": "Comfortable",
+          "two": "Hotels"
+        }
+      },
+      {
+        "quantity": "50+",
+        "desc": {
+          "one": "Exclusive",
+          "two": "Restaurants"
+        }
+      },
+      {
+        "quantity": "5+",
+        "desc": {
+          "one": "Sunny",
+          "two": "Beaches"
+        }
+      },
+      {
+        "quantity": "80+",
+        "desc": {
+          "one": "Adventure",
+          "two": "Tours"
+        }
+      }
+    ],
+    "cards": [
+      {
+        "title": "Adventure Tours Await",
+        "desc": "ATV tours, kayak, and exciting trips",
+        "img": "/home/ATV.webp"
+      },
+      {
+        "title": "Wildlife Encounters",
+        "desc": "Meet turtles, monkeys, and diverse wildlife",
+        "img": "/home/Wildlife.webp"
+      },
+      {
+        "title": "Surf Paradise",
+        "desc": "Ride the world-class waves of Nosara",
+        "img": "/home/Surf.webp"
+      },
+      {
+        "title": "Yoga & Wellness",
+        "desc": "Find peace with yoga and wellness retreats",
+        "img": "/home/Yoga.webp"
+      }
+    ]
+  },
+
+  "blog": {
+    "title": "Get inspiration for your next trip",
+    "desc": "Favorite destinations based on customer reviews"
+  },
+
+  "tours": {
+    "title": "Our Featured Tours",
+    "desc": "Variety of tours in Nosara, from ATV tours to whale and dolphin watching"
+  }
+}

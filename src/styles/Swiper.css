@@ -1,0 +1,7 @@
+.swiper-pagination-bullet {
+    @apply w-2 h-2 bg-gray-300 rounded-full opacity-70 transition-all duration-300 ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+    @apply bg-primary opacity-100 scale-125;
+}  

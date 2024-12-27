@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "title": {
+      "one": "Welcome",
+      "two": "to NBC",
+      "three": "concierge in",
+      "four": "Nosara"
+    },
+    "btnInfo": {
+      "text": "Concierge In Nosara",
+      "img": "/about/keys_emoji.webp"
+    },
+    "desc": "Make it easier for everyone to experience in Nosara",
+    "mission": "Our mission is to create memories that last a lifetime for every traveler who comes to Nosara.",
+    "bg-img": "/about/about-mission.webp"
+  },
+
+  "offer": {
+    "title": "What we offer?",
+    "desc": "As your Nosara concierge, we provide tailored services to make every aspect of your stay effortless and exceptional",
+    "btnInfo": {
+      "text": "Our services",
+      "img": "/about/box_emoji.webp"
+    },
+    "help":{
+      "text":"Looking for other services?",
+      "phone":"+506 8601 2266"
+    },
+    "cards": [
+      {
+        "title": "Tours",
+        "desc": "Discover amazing tours to explore stunning destinations with expert guides.",
+        "icon": "/about/tours_emoji.webp",
+        "info": "Book a Tour",
+        "url": ""
+      },
+      {
+        "title": "Vacation Rentals",
+        "desc": "Find the perfect vacation rental for your next getaway with all the comforts of home.",
+        "icon": "/about/home_emoji.webp",
+        "info": "Vacation Rentals",
+        "url": ""
+      },
+      {
+        "title": "ATV Rentals",
+        "desc": "Rent ATVs for thrilling off-road adventures in the most scenic locations.",
+        "icon": "/about/atv_emoji.webp",
+        "info": "Book an ATV",
+        "url": ""
+      },
+      {
+        "title": "Shared Shuttles",
+        "desc": "Affordable shared shuttle services to get you where you need to go.",
+        "icon": "/about/sharedShuttle_emoji.webp",
+        "info": "Book a Shuttle",
+        "url": ""
+      },
+      {
+        "title": "Private Shuttles",
+        "desc": "Enjoy the convenience and privacy of a dedicated shuttle for your group.",
+        "icon": "/about/privateShuttle_emoji.webp",
+        "info": "Book a Private Shuttle",
+        "url": ""
+      },
+      {
+        "title": "Golf Cart Rentals",
+        "desc": "Explore local areas with ease by renting a golf cart for your trip.",
+        "icon": "/about/golfCart_emoji.webp",
+        "info": "Book a Golf Cart",
+        "url": ""
+      },
+      {
+        "title": "Car Rentals",
+        "desc": "Choose from a variety of cars to suit your travel needs and budget.",
+        "icon": "/about/car_emoji.webp",
+        "info": "Book a Car",
+        "url": ""
+      },
+      {
+        "title": "Restaurants Reservations",
+        "desc": "Reserve a table at the best local restaurants for a delightful dining experience.",
+        "icon": "/about/restaurant_emoji.webp",
+        "info": "Make a Reservation",
+        "url": ""
+      }
+    ]
+  },
+
+  "story":{
+    "img":"/about/video_thumbnail.webp"
+  },
+
+  "whyChooseUs": {
+    "title": "Tours, rentals and shuttles made easy",
+    "desc": "Your trusted concierge, offering seamless tours, rentals, and shuttles for every need",
+    "bg-img": "about/bg-why.webp",
+    "btnInfo": "Why Choose Us",
+    "benefits": [
+      "Expert Local Support",
+      "24/7 Assistance",
+      "Quick Reservations",
+      "Hassle-Free Bookings"
+    ],
+    "images": [
+      "/about/Nosara.webp",
+      "/about/Nosara_2.webp",
+      "/about/Nosara_4.webp",
+      "/about/Nosara_3.webp"
+    ],
+    "awaits": "The Key to Your Nosara Adventure",
+    "carousel": [
+      { "title": "Atv", "img": "/about/ATV.webp" },
+      { "title": "Golf cart", "img": "/about/Golf_carts.webp" },
+      { "title":"Car", "img":"/about/Cars.webp" },
+      { "title": "Shuttle", "img": "/about/Shuttle.webp" }
+    ]
+  }
+
+}

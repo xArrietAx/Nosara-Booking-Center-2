@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "title": {
+      "one": "Contact",
+      "two": "Our Friendly",
+      "three": "Experts Team"
+    },
+    "desc": "Any questions? We would be happy to help you",
+    "location":{
+      "title":"Our Location",
+      "desc": {
+        "one":"Guiones, Guanacaste, Costa Rica",
+        "two":"your gateway to adventure and relaxation."
+      }
+    },
+    "bg-img": "/contact/bg-contact.webp",
+    "cards": [
+        {
+            "title": "Email",
+            "desc": "Send us your inquiries and we'll respond promptly.",
+            "method": {
+                "info":"nbc@nosarabookingcenter.com",
+                "url": "mailto:nbc@nosarabookingcenter.com"
+            },
+            "icon": "MdOutlineMail"
+          },
+          {
+            "title": "Operating Hours",
+            "desc": "Check when we're available to assist you.",
+            "method": {
+                "info":"Mon - Sun: 9:00 am - 5:00 pm"
+            },
+            "icon": "HiOutlineClock"
+          },
+          {
+            "title": "WhatsApp Us",
+            "desc": "Chat with us for quick support and information.",
+            "method": {
+                "info":"+506 8601 2266",
+                "url": "https://wa.me/50686012266?text=Hello Nosara Booking Center."
+            },
+            "icon": "MdWhatsapp"
+          },
+          {
+            "title": "FAQs",
+            "desc": "Find answers to common questions about our services.",
+            "method": {
+                "info":"View FAQs",
+                "url": "#Faqs"
+            },
+            "icon": "MdHelpOutline"
+          }
+    ]
+  },
+
+  "getInTouch": {
+    "title":"Get in Touch",
+    "img": "/contact/bg-contact-form.webp"
+  },
+
+  "faqs": {
+    "title":"Frequently Asked Questions",
+    "desc":"Quick answers to common booking questions.",
+    "bg-img":"/contact/bg-faq.webp",
+    "faqs":[
+      {
+        "title":"What is Nosara Booking Center?",
+        "desc":"We are a concierge service specialized in providing you with personalized experiences. We facilitate the booking of tours, vacation home rentals, vehicles such as carts, golf carts, ATVs, and much more. Our goal is to make your trip unforgettable and hassle-free."
+      },
+      {
+        "title":"Are prices the same with you and the provider?",
+        "desc":"Yes, the prices are exactly the same. We earn a percentage from the provider’s set price, with no extra cost to you."
+      },
+      {
+        "title":"Are the concierge services free of charge?",
+        "desc":"Yes, our concierge services are completely free of charge. You only pay for the services or activities you book, with no additional fees. We earn a percentage from the provider's set price, ensuring transparency and no extra cost to you."
+      },
+      {
+        "title":"How do you ensure service quality?",
+        "desc":"We only work with high quality and reliable suppliers, and we constantly verify that all of our services meet the standards we promise."
+      },
+      {
+        "title":"How far in advance should I make a booking?",
+        "desc":"We recommend that you make your reservation as far in advance as possible to ensure the availability of the services you desire. However, we also try to accommodate last minute reservations whenever possible."
+      }
+    ]
+  }
+
+}
