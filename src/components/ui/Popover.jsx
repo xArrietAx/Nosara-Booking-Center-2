@@ -1,11 +1,11 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, useRef } from "react";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const PopoverContext = createContext();
 
-const Popover = ({ children, className, hover = false, clickOutside = false }) => {
+export const Popover = ({ children, className, hover = false, clickOutside = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef(null);
 
@@ -47,42 +47,42 @@ const Popover = ({ children, className, hover = false, clickOutside = false }) =
   );
 };
 
-const PopoverTrigger = ({ children, className, as = "button", ...props }) => {
+export const PopoverTrigger = ({ children, className, as = "button", onClick, ...props }) => {
   const Trigger = as;
 
-  const { setIsOpen } = useContext(PopoverContext);
+  const { setIsOpen, isOpen } = useContext(PopoverContext);
 
   const handleClick = () => {
     setIsOpen((prev) => !prev);
   };
 
   return (
-    <Trigger className={className} onClick={handleClick} {...props}>
-      {children}
+    <Trigger className={className} onClick={ onClick ? onClick : handleClick} {...props}>
+      { typeof children === "function" ? children({ isOpen, setIsOpen }) : children }
     </Trigger>
   );
 };
 
-const PopoverContent = ({ children, className, classNameWrapper }) => {
+export const PopoverContent = ({ children, className, classNameWrapper, open }) => {
   const { isOpen, setIsOpen } = useContext(PopoverContext);
+
+  const isPopoverOpen = open !== undefined ? open : isOpen;
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      { isPopoverOpen && (
         <div className={`absolute top-full z-[100] ${classNameWrapper}`}>
           <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className={`p-3 border border-border rounded-lg bg-white shadow-2xl ${className}`}
+          className={`p-3 border border-border rounded-lg text-sm bg-white shadow-2xl ${className}`}
         >
-          {  typeof children === "function" ? children({ isOpen, setIsOpen }) : children}
+          { typeof children === "function" ? children({ isOpen, setIsOpen }) : children }
         </motion.div>
         </div>
       )}
     </AnimatePresence>
   );
 };
-
-export { Popover, PopoverTrigger, PopoverContent };

@@ -91,28 +91,33 @@
   },
 
   "whyChooseUs": {
-    "title": "Tours, rentals and shuttles made easy",
+    "title": "Best Concierge Service in Nosara",
     "desc": "Your trusted concierge, offering seamless tours, rentals, and shuttles for every need",
-    "bg-img": "about/bg-why.webp",
-    "btnInfo": "Why Choose Us",
+    "bgImg": "/about/bgWhy.webp",
+    "bgPlane": "/planes.svg",
+    "btnInfo": {
+      "text":"Why Choose Us",
+      "img":"/about/medal_emoji.webp"
+    },
     "benefits": [
-      "Expert Local Support",
-      "24/7 Assistance",
-      "Quick Reservations",
-      "Hassle-Free Bookings"
+      {
+        "title": "Personalized Experiences",
+        "desc": "Every traveler is unique, and so are our services. From flexible rental options to customized recommendations"
+      },
+      {
+        "title": "Local Expertise",
+        "desc": "With deep knowledge of Nosara, we help you discover the best local spots, hidden gems, and authentic experiences"
+      },
+      {
+        "title": "All-In-One Convenience",
+        "desc": "From rentals to tours and shuttles to and from Nosara, we take care of everything so you can relax and enjoy your trip"
+      }
     ],
     "images": [
+      "/about/video_thumbnail.webp",
       "/about/Nosara.webp",
       "/about/Nosara_2.webp",
-      "/about/Nosara_4.webp",
       "/about/Nosara_3.webp"
-    ],
-    "awaits": "The Key to Your Nosara Adventure",
-    "carousel": [
-      { "title": "Atv", "img": "/about/ATV.webp" },
-      { "title": "Golf cart", "img": "/about/Golf_carts.webp" },
-      { "title":"Car", "img":"/about/Cars.webp" },
-      { "title": "Shuttle", "img": "/about/Shuttle.webp" }
     ]
   }
 

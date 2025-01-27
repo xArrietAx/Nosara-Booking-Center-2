@@ -1,7 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { ToursCard } from "../ui/Cards/ToursCard";
-import { ToursFilter } from "./ToursFilter";
-import { Heading } from "@/shared/Heading";
+// import { ToursFilter } from "./ToursFilter";
+import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/home.json";
 
 export async function Tours({ searchParams }) {
@@ -9,7 +9,7 @@ export async function Tours({ searchParams }) {
   const { category = "", location = "", sortBy = "" } = await searchParams;
 
   const supabase = await createClient();
-  let query = supabase.from("Tours").select("*, category");
+  let query = supabase.from("Tours").select("*, category").limit(6);
   
   if (category) {
     query = query.eq("category->>category", category)
@@ -23,10 +23,10 @@ export async function Tours({ searchParams }) {
     query = query.order("from_price", { ascending: true });
   }
   
-  if (sortBy === "priceDesc") {
-    query = query.order("from_price", { ascending: false });
+  if (sortBy === "nameAsc") {
+    query = query.order("name", { ascending: true }); 
   }
-  
+
   const { data: tours, error } = await query;
 
   return (
@@ -39,13 +39,13 @@ export async function Tours({ searchParams }) {
             desc={content.tours.desc}
             classNameTitle="heading-2"
           />
-          <ToursFilter tours={tours} />
+          {/* <ToursFilter tours={tours} /> */}
         </div>
 
         <div className="mt-10">
         {
-          error ? <div className="text-center text-red-500">There was an error in fetching the information</div> : tours.length === 0 ? <div className="font-bold text-center">No tours found</div> : <div className="grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          {tours.slice(0, 6).map((item) => {
+          error ? <div className="text-md-bold text-center">There was an error in fetching the information</div> : tours.length === 0 ? <div className="font-bold text-center">No tours found</div> : <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {tours.map((item) => {
             return <ToursCard key={item.name} data={item} />;
           })}
         </div>

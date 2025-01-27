@@ -6,16 +6,19 @@ import { Blog } from "@/components/Home/Blog";
 import { Tours } from "@/components/Home/Tours";
 import { WhyChooseUs } from "@/components/About/WhyChooseUs";
 
-export default function Home({ searchParams }) {
+export default async function Home({ searchParams }) {
+
+  const params = await searchParams
+
   return (
     <main>
       <Hero />
       <Destinations />
       <Stays />
       <WhyNosara />
-      <Tours searchParams={searchParams} />
-      <WhyChooseUs />
-      <Blog /> 
+      <Tours searchParams={params} />
+      <WhyChooseUs Tag="h6" />
+      <Blog Tag="h6" /> 
     </main>
   )
 }

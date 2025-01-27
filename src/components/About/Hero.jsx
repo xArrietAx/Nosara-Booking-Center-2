@@ -1,5 +1,5 @@
 import content from "@/content/about.json";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 import { BtnInfo } from "../Stateless/BtnInfo";
 import Image from "next/image";
 

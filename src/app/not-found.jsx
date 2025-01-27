@@ -1,7 +1,7 @@
 import { Icon } from "@/components/Stateless/Icon";
 import { HiArrowNarrowLeft } from "@/icons/index";
 import content from "@/content/not-found.json";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";

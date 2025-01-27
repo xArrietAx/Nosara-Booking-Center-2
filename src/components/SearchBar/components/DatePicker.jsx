@@ -4,28 +4,23 @@ import {
   PopoverTrigger,
 } from "@/components/ui/Popover";
 import { MdCalendarMonth, HiChevronDown } from "@/icons/index";
-import { format } from "date-fns";
+import { format, addDays } from "date-fns";
 import DatePicker from "react-datepicker";
 
-export function Datepicker({ selected, setSelected }) {
-
-  const isPastDate = (date) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); 
-    return date < today;
-  };
-
+export function Datepicker({ selected, setSelected, desactiveDate, name }) {
   return (
-    <Popover clickOutside>
+    <Popover clickOutside className="justify-center min-[490px]:justify-normal">
       <PopoverTrigger
         type="button"
         className="flex flex-1 items-center gap-1 text-sm"
       >
-        <MdCalendarMonth className="text-text size-[1.1rem]" />{" "}
+        <MdCalendarMonth className="flex-none text-text size-[1.1rem]" />
+        
         <input
           type="text"
           required
-          className="w-24 font-bold outline-none cursor-pointer placeholder:text-black"
+          name={name}
+          className="w-24 font-bold outline-none cursor-pointer placeholder-black caret-transparent"
           value={selected ? format(selected, "MM-dd-yyyy") : ""}
           onChange={() => {}}
           placeholder="Select a date"
@@ -36,8 +31,8 @@ export function Datepicker({ selected, setSelected }) {
         <DatePicker
           inline
           selected={selected}
-          filterDate={(date) => !isPastDate(date)}
-          onChange={(date) => setSelected(date)}
+          minDate={desactiveDate ?  addDays(new Date(desactiveDate), 1) : new Date()}
+          onChange={date => setSelected(date)}
           renderCustomHeader={({ date, decreaseMonth, increaseMonth }) => (
             <div className="datepicker-header">
               <button type="button"

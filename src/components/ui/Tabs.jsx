@@ -1,49 +1,50 @@
-import { createContext, useContext, useState } from "react";
+"use client"
+
+import React, { useState, createContext, useContext } from "react";
+import { Button } from "./Button";
 
 const TabsContext = createContext();
 
-const Tabs = ({ defaultValue, children, className, as = "div" }) => {
-
-  const Tag = as
-
+const Tabs = ({ defaultValue, className, children }) => {
   const [activeTab, setActiveTab] = useState(defaultValue);
+
+  const renderContent = () => {
+    if (typeof children === "function") {
+      return children({ activeTab, setActiveTab });
+    }
+    return children;
+  };
 
   return (
     <TabsContext.Provider value={{ activeTab, setActiveTab }}>
-      <Tag className={className}>{children}</Tag>
+      <div className={className}>{renderContent()}</div>
     </TabsContext.Provider>
   );
 };
 
-const TabsList = ({ children, className, as = "ul" }) => {
-
-  const Tag = as
-
-  return <Tag className={`flex ${className}`}>{children}</Tag>;
+const TabsList = ({ children, className }) => {
+  return <div className={className}>{children}</div>;
 };
 
-const TabsTrigger = ({ value, children, className, as = "button" }) => {
+const TabsTrigger = ({ value, children, onClick, variant, size, className }) => {
+  const { activeTab, setActiveTab } = useContext(TabsContext);
 
-    const Trigger = as
+  const isActive = activeTab === value;
 
-    const { activeTab, setActiveTab } = useContext(TabsContext);
-  
-    const isActive = activeTab === value;
+  return (
+    <Button className={className} onClick={() => {setActiveTab(value), onClick()}} size={size} variant={isActive ? variant : "ghost"}>
+       {children}
+     </Button>
+  );
+};
 
-    return (
-      <Trigger onClick={() => setActiveTab(value)} className={className} >
-        {typeof children === "function" ? children(isActive) : children}
-      </Trigger>
-    );
-  };
-  
+const TabsContent = ({ value, children }) => {
 
-const TabsContent = ({ value, children, className }) => {
   const { activeTab } = useContext(TabsContext);
 
-  return activeTab === value ? (
-    <>{children}</>
-  ) : null;
+  if (value !== activeTab) return null;
+
+  return <>{children}</>;
 };
 
 export { Tabs, TabsList, TabsTrigger, TabsContent };

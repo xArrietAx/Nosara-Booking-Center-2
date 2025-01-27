@@ -199,6 +199,20 @@
     line-height: 76px
 }
 
+.text-86-bold {
+    font-size: 86px;
+    line-height: 86px;
+    font-weight: 700;
+    font-family: var(--manrope)
+}
+
+.text-64-medium {
+    font-size: 64px;
+    line-height: 76px;
+    font-weight: 400;
+    font-family: var(--manrope)
+}
+
 .text-96 {
     font-size: 96px!important;
     line-height: 103px!important;

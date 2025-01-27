@@ -1,17 +1,21 @@
 import { Button } from "../ui/Button";
 import { HiArrowNarrowLeft } from "@/icons/index";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/home.json";
 import Link from "next/link";
 import { BlogCarousel } from "./BlogCarousel";
+import { getPosts } from "@/utils/blog/getPosts";
 
-export function Blog() {
+export async function Blog({ Tag }) {
+
+  const posts = await getPosts();
+
   return (
     <section className="section-space">
       <div className="container">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <Heading
-            as="h6"
+            as={Tag}
             title={content.blog.title}
             desc={content.blog.desc}
             className="md:w-3/4 lg:w-4/6 xl:w-fit"
@@ -39,11 +43,15 @@ export function Blog() {
         </div>
 
         <div className="mt-10">
-          <BlogCarousel />
+          {posts.length === 0 ? (
+            <div className="text-md-bold text-center">No blogs found</div>
+          ) : (
+           <BlogCarousel posts={posts} />
+          )}
         </div>
 
         <div className="flex justify-center mt-12">
-          <Button as={Link} href="Vacation_rentals">
+          <Button as={Link} href="Blog">
             View More <HiArrowNarrowLeft className="rotate-180 size-6" />
           </Button>
         </div>

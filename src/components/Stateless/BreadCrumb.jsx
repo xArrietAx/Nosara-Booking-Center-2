@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { HiChevronDown } from "@/icons/index";
+import { HiMiniSlash } from "@/icons/index";
 import Link from "next/link";
 
 export function Breadcrumb() {
@@ -9,10 +9,10 @@ export function Breadcrumb() {
   const pathArray = pathname.split("/").filter((path) => path);
 
   return (
-    <section className="py-9 border-t border-border bg-sectionBg">
-      <ol className="container flex items-center gap-3 font-medium text-text">
+    <section className="py-7 border-t border-border bg-sectionBg">
+      <ol className="container flex items-center gap-3 font-medium text-sm text-text">
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/"className="link-reverse">Home</Link>
         </li>
         {pathArray.map((path, index) => {
           const href = "/" + pathArray.slice(0, index + 1).join("/");
@@ -20,16 +20,15 @@ export function Breadcrumb() {
 
           return (
             <li key={href} className="flex items-center gap-3">
-              <HiChevronDown className="size-6 -rotate-90" />
+              <HiMiniSlash className="size-6" />
               {isLast ? (
                 <span className="text-black font-bold" >
                   {decodeURIComponent(path.replace(/-/g, " "))}
                 </span>
-              ) : (
-                <Link href={href} className="">
+              ) : ( pathArray[0] === "Rentals" ? <span>{decodeURIComponent(path.replace(/-/g, " "))}</span> : 
+                <Link href={href} className="link-reverse">
                   {decodeURIComponent(path.replace(/-/g, " "))}
-                </Link>
-              )}
+                </Link> )}
             </li>
           );
         })}

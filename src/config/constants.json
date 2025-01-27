@@ -1,0 +1,29 @@
+{
+  "toursFilter": {
+    "categories": ["None", "ATV", "Sea Adventure", "Canopy"],
+    "locations": ["None", "Garza", "Nosara", "Camaronal"],
+    "sortOptions": [
+      { "label": "None", "value": "" },
+      { "label": "Name", "value": "nameAsc" },
+      { "label": "Price", "value": "priceAsc" }
+    ]
+  },
+
+  "tagsFilter": {
+    "categories": ["None", "Adventure", "Travel", "Discover", "Cultural", "Wildlife", "Nature", "Gastronomy"],
+    "duration": [
+      { "label": "None", "value": "" },
+      { "label": "0 - 5 mins", "value": "0-5" },
+      { "label": "5 - 10 mins", "value": "5-10" },
+      { "label": "10 - 20 mins", "value": "10-20" },
+      { "label": "over 20+ mins", "value": "20+" }
+    ],
+    "sortOptions": [
+      { "label": "None", "value": "" },
+      { "label": "Recents", "value": "recents" },
+      { "label": "Name (A to Z)", "value": "nameAsc" },
+      { "label": "Name (Z to A)", "value": "nameDesc" }
+    ]
+  }
+
+}

@@ -71,3 +71,13 @@
   .react-datepicker__aria-live{
     display: none;
   }
+
+
+  .react-datepicker__time-list-item{
+    @apply p-2 rounded transition-colors duration-300;
+
+    &:hover {
+      @apply bg-secondary text-black cursor-pointer
+    }
+
+  }

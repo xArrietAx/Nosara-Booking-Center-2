@@ -24,7 +24,7 @@ export function Footer() {
               </Button>
               <span className="text-md-medium">Need help? Whatsapp us</span>
             </div>
-            <Link href="https://wa.me/50686012266?text=Hello Nosara Booking Center." target="_blank" className="heading-6">+506 8601 2266</Link>
+            <Link href="https://wa.me/50686012266?text=Hello Nosara Booking Center." target="_blank" rel="noopener noreferrer" className="heading-6">+506 8601 2266</Link>
           </div>
         </div>
 
@@ -53,14 +53,14 @@ export function Footer() {
                 Quick Links
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  <Button as={Link} variant="outline" href="https://www.facebook.com/profile.php?id=61557653082047" target="_blank" isIconOnly className="hover:-translate-y-1" >
-                    <MdFacebook className="size-5" />
+                  <Button as={Link} variant="outline" href="https://www.facebook.com/profile.php?id=61557653082047" target="_blank" rel="noopener noreferrer" isIconOnly className="hover:-translate-y-1" >
+                    <MdFacebook className="size-6" />
                   </Button>
-                  <Button as={Link} variant="outline" href="https://wa.me/50686012266?text=Hello Nosara Booking Center." target="_blank" isIconOnly className="hover:-translate-y-1" >
-                    <MdWhatsapp className="size-5" />
+                  <Button as={Link} variant="outline" href="https://wa.me/50686012266?text=Hello Nosara Booking Center." target="_blank" rel="noopener noreferrer" isIconOnly className="hover:-translate-y-1" >
+                    <MdWhatsapp className="size-6" />
                   </Button>
-                  <Button as={Link} variant="outline" href="mailto:nbc@nosarabookingcenter.com" target="_blank" isIconOnly className="hover:-translate-y-1" >
-                    <MdOutlineMail className="size-5" />
+                  <Button as={Link} variant="outline" href="mailto:nbc@nosarabookingcenter.com" target="_blank" rel="noopener noreferrer" isIconOnly className="hover:-translate-y-1" >
+                    <MdOutlineMail className="size-6" />
                   </Button>
                 </div>
               </div>
@@ -90,10 +90,19 @@ export function Footer() {
           })}
         </div>
 
-        <div className="pt-10 border-t border-border/20 mt-12">
-          <p className="text-center text-sm color-white">
+        <div className="text-sm-medium flex flex-col items-center justify-between gap-5 pt-10 border-t border-border/20 mt-12 lg:flex-row">
+          <p className="text-center">
             Copyright © 2024 Nosara Booking Center. All rights reserved.
           </p>
+          <ul className="flex flex-wrap items-center justify-center gap-4">
+          {menu.footerCopyright.map(item => {
+              return <li key={item.name}>
+                  <Link href={item.url} className="text-text transition duration-300 hover:text-white" >
+                    {item.name}
+                  </Link>
+                </li>
+          })}
+          </ul>
         </div>
 
       </div>

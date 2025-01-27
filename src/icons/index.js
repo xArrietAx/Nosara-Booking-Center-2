@@ -1,9 +1,12 @@
-import { HiOutlineClock, HiOutlineMenuAlt1, HiOutlineX, HiChevronDown, HiPencil,  HiArrowNarrowLeft, HiPlus } from "react-icons/hi";
-import { MdFacebook, MdWhatsapp, MdOutlineMail, MdPerson, MdCalendarMonth, MdLocationPin, MdOutlineBed, MdOutlineDoorBack, MdOutlineBathtub, MdHelpOutline, MdOutlinePhone, MdPersonOutline } from "react-icons/md";
+import { HiOutlineClock, HiOutlineMenuAlt1, HiOutlineX, HiChevronDown, HiPencil,  HiArrowNarrowLeft, HiPlus, HiOutlineSearch } from "react-icons/hi";
+import { MdFacebook, MdWhatsapp, MdOutlineMail, MdPerson, MdCalendarMonth, MdLocationPin, MdOutlineLocationOn, MdOutlineBed, MdOutlineDoorBack, MdOutlineBathtub, MdHelpOutline, MdOutlinePhone, MdPersonOutline, MdOutlineDirectionsCar } from "react-icons/md";
 
-import { LuBus, LuFolderOpen, LuHouse, LuMountain } from "react-icons/lu";
+import { LuBus, LuFolderOpen, LuHouse, LuMountain, LuClock } from "react-icons/lu";
 import { GiCheckMark } from "react-icons/gi";
+import { PiFiles } from "react-icons/pi";
 import { IoBoatOutline } from "react-icons/io5";
+import { LiaThumbtackSolid } from "react-icons/lia";
+import { HiMiniSlash } from "react-icons/hi2";
 import { BsFillPlayFill } from "react-icons/bs";
 
 const Atv = ({ width = 25, height = 25 }) => (
@@ -48,9 +51,9 @@ const Atv = ({ width = 25, height = 25 }) => (
   );
 
 export const all = {
-     HiOutlineClock, MdOutlineDoorBack, HiOutlineMenuAlt1, HiOutlineX, HiChevronDown, MdFacebook, MdPerson, MdCalendarMonth, HiPencil, MdLocationPin, HiArrowNarrowLeft, LuBus, LuFolderOpen, LuHouse, LuMountain, MdOutlineBed, MdOutlineBathtub, Atv, zipLine, IoBoatOutline, GiCheckMark, MdOutlineMail, MdWhatsapp, MdHelpOutline, MdOutlinePhone, HiPlus, MdPersonOutline, BsFillPlayFill
+     HiOutlineClock, MdOutlineDoorBack, HiOutlineMenuAlt1, HiOutlineX, HiChevronDown, MdFacebook, MdPerson, MdCalendarMonth, HiPencil, MdLocationPin, HiArrowNarrowLeft, LuBus, LuFolderOpen, LuHouse, LuMountain, MdOutlineBed, MdOutlineBathtub, Atv, zipLine, IoBoatOutline, GiCheckMark, MdOutlineMail, MdWhatsapp, MdHelpOutline, MdOutlinePhone, HiPlus, MdPersonOutline, BsFillPlayFill, PiFiles, HiMiniSlash, HiOutlineSearch, MdOutlineLocationOn, LiaThumbtackSolid, MdOutlineDirectionsCar, LuClock
 } 
 
 export {
-     HiOutlineClock, MdOutlineDoorBack, HiOutlineMenuAlt1, HiOutlineX, HiChevronDown, MdFacebook, MdWhatsapp, MdOutlineMail, MdPerson, MdCalendarMonth, HiPencil, MdLocationPin, HiArrowNarrowLeft, LuBus, LuFolderOpen, LuHouse, LuMountain, MdOutlineBed, MdOutlineBathtub, Atv, zipLine, IoBoatOutline, GiCheckMark, MdHelpOutline, MdOutlinePhone, HiPlus, MdPersonOutline, BsFillPlayFill
+     HiOutlineClock, MdOutlineDoorBack, HiOutlineMenuAlt1, HiOutlineX, HiChevronDown, MdFacebook, MdWhatsapp, MdOutlineMail, MdPerson, MdCalendarMonth, HiPencil, MdLocationPin, HiArrowNarrowLeft, LuBus, LuFolderOpen, LuHouse, LuMountain, MdOutlineBed, MdOutlineBathtub, Atv, zipLine, IoBoatOutline, GiCheckMark, MdHelpOutline, MdOutlinePhone, HiPlus, MdPersonOutline, BsFillPlayFill, PiFiles, HiMiniSlash, HiOutlineSearch, MdOutlineLocationOn, LiaThumbtackSolid, MdOutlineDirectionsCar, LuClock
 }

@@ -14,7 +14,25 @@
     },
     {
       "name": "Blog",
-      "url": "/Blog"
+      "hasChildren": true,
+      "columns":1,
+      "children": [
+        {
+          "name": "Blog",
+          "url": "/Blog",
+          "description": "Articles to learn about Nosara"
+        },
+        {
+          "name": "Tags",
+          "url": "/Blog/Tags",
+          "description": "Find articles by tags"
+        },
+        {
+          "name": "Categories",
+          "url": "/Blog/Categories",
+          "description": "Find articles by category"
+        }
+      ]
     },
     {
       "name": "Vacation rentals",
@@ -24,10 +42,10 @@
       "name": "Tours",
       "url": "/Tours"
     },
-
     {
       "name": "Shuttles",
       "hasChildren": true,
+      "columns":2,
       "children": [
         {
           "name": "Shared",
@@ -75,32 +93,29 @@
         }
       ]
     },
-
     {
       "name": "Rentals",
       "hasChildren": true,
+      "columns":1,
       "children": [
         {
           "name": "ATV",
-          "url": "/Service/ATV",
+          "url": "/Rentals/ATV",
           "description": "For exciting off-road adventures."
         },
         {
           "name": "Golf cart",
-          "url": "/Service/Golf_cart",
+          "url": "/Rentals/Golf cart",
           "description": "For easy transport."
         },
         {
           "name": "Car",
-          "url": "/Service/Car",
+          "url": "/Rentals/Car",
           "description": "For efficient travel."
         }
       ]
     }
-
   ],
-
-
   "footer": [
     {
       "title": "Pages",
@@ -120,23 +135,6 @@
       ]
     },
     {
-      "title": "Rental",
-      "children": [
-        {
-          "name": "ATV",
-          "url": "/Service/ATV"
-        },
-        {
-          "name": "Golf cart",
-          "url": "/Service/Golf_cart"
-        },
-        {
-          "name": "Car",
-          "url": "/Service/Car"
-        }
-      ]
-    },
-    {
       "title": "Services",
       "children": [
         {
@@ -152,12 +150,25 @@
           "url": "/Shuttle"
         }
       ]
+    },
+    {
+      "title": "Rentals",
+      "children": [
+        {
+          "name": "ATV",
+          "url": "/Rentals/ATV"
+        },
+        {
+          "name": "Golf cart",
+          "url": "/Rentals/Golf cart"
+        },
+        {
+          "name": "Car",
+          "url": "/Rentals/Car"
+        }
+      ]
     }
   ],
-
-
-
-
   "footerCopyright": [
     {
       "name": "Privacy & Policy",
@@ -172,7 +183,4 @@
       "url": "/Cookies-policy"
     }
   ]
-
-
-  
 }

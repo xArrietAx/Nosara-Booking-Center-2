@@ -2,7 +2,7 @@ import { Hero } from "@/components/About/Hero";
 import { Offer } from "@/components/About/Offer";
 import { Video } from "@/components/About/Video";
 import { Blog } from "@/components/Home/Blog";
-import { WhyChooseUs } from "@/components/about/WhyChooseUs";
+import { WhyChooseUs } from "@/components/About/WhyChooseUs";
 import { Breadcrumb } from "@/components/Stateless/BreadCrumb";
 
 export default function About() {
@@ -12,8 +12,8 @@ export default function About() {
       <Hero />
       <Video />
       <Offer />
-      <WhyChooseUs />
-      <Blog />
+      <WhyChooseUs Tag="h3" />
+      <Blog Tag="h4" />
     </main>
   );
 }

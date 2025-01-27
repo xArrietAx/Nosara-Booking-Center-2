@@ -1,6 +1,6 @@
 import { MdLocationPin } from "@/icons/index";
 import content from "@/content/contact.json";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 import { Button } from "../ui/Button";
 import { Icon } from "../Stateless/Icon";
 import Link from "next/link";

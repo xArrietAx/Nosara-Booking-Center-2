@@ -9,6 +9,7 @@ export function Button({
   variant = "primary",
   as = "button",
   radius = "full",
+  loading,
   ...props
 }) {
   const Tag = as;
@@ -33,7 +34,7 @@ export function Button({
       "border-0 hover:border hover:!text-black hover:!bg-transparent": hover === "outline" && variant === "ghost",
       "hover:!border-0 hover:!text-black hover:!bg-transparent": hover === "ghost",
 
-
+      "px-3 py-[0.4375rem] text-xs": size === "xs",
       "px-[1.125rem] py-2 text-sm": size === "sm",
       "px-[1.375rem] py-3": size === "md" && !isIconOnly,
       "px-[1.625rem] py-4": size === "lg",
@@ -46,8 +47,14 @@ export function Button({
   );
 
   return (
-      <Tag className={buttonClass} {...props}>
-        {children}
+      <Tag className={buttonClass} disabled={loading} {...props}>
+        {loading ? <Loading /> : children}
       </Tag>
   );
+}
+
+function Loading() {
+  return <div className="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent rounded-full" role="status" aria-label="loading">
+  <span className="sr-only">Loading...</span>
+</div>
 }

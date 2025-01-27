@@ -1,8 +1,9 @@
-import { ContextProvider } from "@/context/useContext";
 import { Manrope } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import { Header } from "@/shared/Header";
 import { Footer } from "@/shared/Footer";
 import "@/styles/main.css";
+import { Providers } from "@/context/Providers";
 
 const manrope = Manrope({
   weight: ["400", "500", "700", "800"],
@@ -19,12 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope.className}>
       <body>
-        <ContextProvider>
+        <Providers>
         <Header /> 
         {children}
         <Footer />
-        </ContextProvider>
+        </Providers>
+        <Toaster />
       </body>
     </html>
-  );
-}
+  )}

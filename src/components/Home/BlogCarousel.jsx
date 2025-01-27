@@ -1,10 +1,10 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { BlogCard } from "../ui/Cards/BlogCard";
+import { PostCard } from "../ui/Cards/PostCard";
 import { Navigation, Autoplay } from "swiper/modules";
 
-export function BlogCarousel({ Blogs }) {
+export function BlogCarousel({ posts }) {
   return (
     <Swiper
     modules={[Navigation, Autoplay ]}
@@ -16,10 +16,9 @@ export function BlogCarousel({ Blogs }) {
       }}
       navigation={{nextEl: ".blog-btn-next", prevEl:".blog-btn-prev" }}
       loop={true}
-      pagination={{ clickable: true }}
       className="pb-5"
       breakpoints={{
-        992: {
+        1200: {
           slidesPerView: 3
         },
         768: {
@@ -27,21 +26,11 @@ export function BlogCarousel({ Blogs }) {
         },
       }}
     >
-      <SwiperSlide>
-        <BlogCard type="Cultural" src="https://travila-nextjs.vercel.app/assets/imgs/page/homepage1/news3.png" />
+      {posts.slice(0, 8).map(item => {
+        return <SwiperSlide key={item.slug}>
+        <PostCard data={item} />
       </SwiperSlide>
-      <SwiperSlide>
-        <BlogCard type="Travel" src="https://travila-nextjs.vercel.app/assets/imgs/page/homepage1/news.png" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <BlogCard type="Discovery" src="https://travila-nextjs.vercel.app/assets/imgs/page/homepage1/news2.png" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <BlogCard type="Travel" src="https://travila-nextjs.vercel.app/assets/imgs/page/homepage1/news.png" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <BlogCard type="Discovery" src="https://travila-nextjs.vercel.app/assets/imgs/page/homepage1/news2.png" />
-      </SwiperSlide>
+      })}
     </Swiper>
   );
 }

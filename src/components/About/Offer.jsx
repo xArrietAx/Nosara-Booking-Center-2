@@ -1,5 +1,5 @@
 import { HiArrowNarrowLeft, MdWhatsapp } from "@/icons/index";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/about.json";
 import Link from "next/link";
 import Image from "next/image";

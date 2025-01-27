@@ -8,14 +8,14 @@ import {
 } from "../ui/Accordion";
 import content from "@/content/contact.json";
 import { HiPlus } from "@/icons/index";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 
 export function Faqs() {
   return (
     <section id="Faqs" className="pb-24 bg-no-repeat bg-left-bottom" style={{ backgroundImage: `url(${content.faqs["bg-img"]})` }}>
       <div className="container">
         <Heading
-          as="h4"
+          as="h3"
           title={content.faqs.title}
           desc={content.faqs.desc}
           className="text-center"

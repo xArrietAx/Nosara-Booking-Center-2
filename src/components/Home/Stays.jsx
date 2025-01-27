@@ -1,7 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { HiArrowNarrowLeft } from "@/icons/index";
 import { StayCarousel } from "./StaysCarousel";
-import { Heading } from "@/shared/Heading";
+import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/home.json";
 import { Button } from "../ui/Button";
 import Link from "next/link";
@@ -29,7 +29,7 @@ export async function Stays() {
 
         <div className="mt-10">
           { 
-            error ? <div className="text-center text-red-500">There was an error in fetching the information</div> : houses.length === 0 ? <div className="font-bold text-center">No houses found</div> : <StayCarousel stays={houses} />
+            error ? <div className="text-md-bold text-center">There was an error in fetching the information</div> : houses.length === 0 ? <div className="font-bold text-center">No houses found</div> : <StayCarousel stays={houses} />
           }
         </div>
         

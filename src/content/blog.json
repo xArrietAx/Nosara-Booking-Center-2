@@ -1,0 +1,20 @@
+{
+    
+  "hero": {
+    "title": {
+      "one": "Inspiration",
+      "two": "for Your Next Trips"
+    },
+    "desc": "Discover Nosara Treasures with Nosara Booking Center"
+  },
+
+  "someBlogs":{
+    "shadow":"/blog/shadow.webp"
+  },
+
+  "blogs":{
+    "title":"Explore Blog",
+    "desc":"Learn more about the people, places, and stories of Nosara"
+  }
+
+}

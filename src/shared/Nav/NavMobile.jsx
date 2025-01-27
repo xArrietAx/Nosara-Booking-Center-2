@@ -32,7 +32,7 @@ export function NavMobile() {
 
   function close() {
     setIsOpen(false);
-    document.documentElement.style.overflow = "scroll";
+    document.documentElement.style.overflow = "auto";
   }
 
   return (
@@ -69,7 +69,6 @@ export function NavMobile() {
 
 const renderMenuItems = (menu) => {
   return menu.map((item) => {
-    console.log(item.hasChildren);
     return (
       <AccordionItem as="li" key={item.name} value={item.name} className="flex flex-col">
         {item.url ? (

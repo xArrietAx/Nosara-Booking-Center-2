@@ -5,7 +5,7 @@
       "one": "We offer vacation rentals, tours, shuttles, and a variety of rentals,",
       "two": "including ATVs, golf carts, and cars in Nosara"
     },
-    "bg-img": "home/banner.webp",
+    "bgImg": "/home/banner.webp",
     "btnInfo": {
       "text": "Explore Nosara",
       "img": "/home/palm_emoji.webp"
@@ -19,53 +19,61 @@
 
   "destinations": {
     "title": "Your next adventure awaits",
-    "desc": "Explore the most popular destinations for your next adventure",
+    "desc": "Explore our destinations connected to Nosara",
     "cards": [
       {
         "name": "Liberia",
-        "duration": 3,
+        "label":"Hours",
+        "count": 3,
         "img": "/home/Liberia.webp",
         "url": "/"
       },
       {
         "name": "San José",
-        "duration": 6,
+        "label":"Hours",
+        "count": 6,
         "img": "/home/SanJose.webp",
         "url": "/"
       },
       {
         "name": "Flamingo",
-        "duration": 3,
+        "label":"Hours",
+        "count": 3,
         "img": "/home/Flamingo.webp",
         "url": "/"
       },
       {
         "name": "Tamarindo",
-        "duration": 3,
+        "label":"Hours",
+        "count": 3,
         "img": "/home/Tamarindo.webp",
         "url": "/"
       },
       {
         "name": "Monteverde",
-        "duration": 4,
+        "label":"Hours",
+        "count": 4,
         "img": "/home/Monteverde.webp",
         "url": "/"
       },
       {
         "name": "Jacó",
-        "duration": 4,
+        "label":"Hours",
+        "count": 4,
         "img": "/home/Jacó.webp",
         "url": "/"
       },
       {
         "name": "La Fortuna",
-        "duration": 4,
+        "label":"Hours",
+        "count": 4,
         "img": "/home/Fortuna.webp",
         "url": "/"
       },
       {
         "name": "Samara",
-        "duration": 1,
+        "label":"Hours",
+        "count": 1,
         "img": "/home/Samara.webp",
         "url": "/"
       }
