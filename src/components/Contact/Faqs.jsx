@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/Accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/Accordion";
 import content from "@/content/contact.json";
-import { HiPlus } from "@/icons/index";
 import { Heading } from "@/components/Stateless/Heading";
 
 export function Faqs() {
@@ -15,7 +9,7 @@ export function Faqs() {
     <section id="Faqs" className="pb-24 bg-no-repeat bg-left-bottom" style={{ backgroundImage: `url(${content.faqs["bg-img"]})` }}>
       <div className="container">
         <Heading
-          as="h3"
+          as="h2"
           title={content.faqs.title}
           desc={content.faqs.desc}
           className="text-center"
@@ -34,21 +28,16 @@ export function Faqs() {
                 value={item.title}
                 className="px-5 py-8 border-b border-border last:border-0"
               >
-                <AccordionTrigger
-                  icon={(isOpen) => (
-                    <HiPlus
-                      className={`min-w-fit p-2 rounded-full bg-secondary size-9 transition-transform duration-300 ${
+                <AccordionTrigger icon={(isOpen) => (<div className={`flex items-center justify-center min-w-fit p-1.5 rounded-sm bg-secondary`}> 
+                      <i className={`icon-[octicon--plus-24] size-7 transition-transform duration-300 ${
                         isOpen ? "rotate-[135deg]" : null
-                      }`}
-                    />
-                  )}
-                  className="gap-3 w-full"
-                >
+                      }`} />
+                      </div>)} className="gap-3 w-full" >
                   <div className="flex items-center gap-5">
                     <span className="heading-5 hidden sm:block">0{i + 1}</span>
-                    <span className="text-xl-bold text-start">
+                    <h3 className="text-xl-bold text-start">
                       {item.title}
-                    </span>
+                    </h3>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>

@@ -1,5 +1,7 @@
 import { getPosts } from "./getPosts";
 
 export async function getPost(slug) {
-    return await getPosts().find(item => item.slug === slug )
+    const { posts } = await getPosts()
+
+    return posts.find(item => item.slug === slug )
 }

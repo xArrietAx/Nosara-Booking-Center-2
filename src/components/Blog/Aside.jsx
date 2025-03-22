@@ -1,9 +1,7 @@
 import { getCategories } from "@/utils/blog/getCategories";
-import { getRecentPosts } from "@/utils/blog/getRecentPosts";
 import { createGallery } from "@/utils/blog/createGallery";
 import { getPosts } from "@/utils/blog/getPosts";
 import { Button } from "@/components/ui/Button";
-import { MdCalendarMonth } from "@/icons/index";
 import { Gallery } from "./Singles/Gallery";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +9,7 @@ import { Search } from "@/components/Stateless/Search";
 
 export async function Aside() {
 
-  const posts = await getPosts()
-  const recentposts = await getRecentPosts()
+  const { posts } = await getPosts(null, null, { sortBy: "recent" });
   const categories = await getCategories()
   const gallery = await createGallery()
 
@@ -22,9 +19,9 @@ export async function Aside() {
       <Search data={posts} fields={["metadata.title"]} />
 
       <div className="p-7 border border-border rounded-lg">
-        <span className="text-xl-bold inline-block w-full pb-5 border-b border-border mb-8">
+        <h3 className="text-xl-bold inline-block w-full pb-5 border-b border-border mb-8">
           Explore Categories
-        </span>
+        </h3>
         <ul className="flex flex-wrap gap-3">
           {categories.map((item, i) => {
             return (
@@ -37,11 +34,11 @@ export async function Aside() {
       </div>
 
       <div className="p-7 border border-border rounded-lg">
-        <span className="text-xl-bold inline-block w-full pb-5 border-b border-border mb-8">
+        <h3 className="text-xl-bold inline-block w-full pb-5 border-b border-border mb-8">
           Recent Posts
-        </span>
+        </h3>
         <ul className="flex flex-col gap-8">
-          {recentposts.slice(0, 5).map(item => {
+          {posts.slice(0, 5).map(item => {
             return (
               <li key={item.slug}>
                 <div className="flex items-center gap-3">
@@ -59,7 +56,7 @@ export async function Aside() {
                       {item.metadata.title}
                     </Link>
                     <div className="flex items-center gap-2 text-text">
-                      <MdCalendarMonth />
+                      <i className="icon-[mage--calendar-2]" />
                       <p className="text-sm-medium">{item.metadata.date}</p>
                     </div>
                   </div>

@@ -2,12 +2,11 @@
 
 import React, { createContext, useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiOutlineX } from "@/icons/index";
 import { Button } from "./Button";
 
 const ModalContext = createContext();
 
-const Modal = ({ children }) => {
+const Modal = ({ children, className }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = () => {
@@ -22,7 +21,9 @@ const Modal = ({ children }) => {
 
   return (
     <ModalContext.Provider value={{ isOpen, open, close }}>
+      <div className={className}>
       {children}
+      </div>
     </ModalContext.Provider>
   );
 };
@@ -34,7 +35,7 @@ const ModalContent = ({ children, className }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed top-0 left-0 z-40 flex items-center justify-center w-screen h-screen bg-black/50"
+          className="fixed top-0 left-0 z-40 flex items-center justify-center w-screen h-screen px-2 bg-black/50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -64,7 +65,7 @@ const ModalHeader = ({ children, className, classNameTitle }) => {
     <div className={`flex items-center justify-between ${className}`}>
       <span className={classNameTitle}>{children}</span>
       <Button isIconOnly radius="smooth" variant="secondary" onClick={close}>
-        <HiOutlineX className="size-6" />
+      <i className="icon-[heroicons-outline--x] size-7" />
       </Button>
     </div>
   );
@@ -78,13 +79,16 @@ const ModalFooter = ({ children, className }) => {
   );
 };
 
-const ModalTrigger = ({ children, className }) => {
+const ModalTrigger = ({ as = "button", children, className, ...props }) => {
+  
+  const Trigger = as;
+
   const { open } = useContext(ModalContext);
 
   return (
-    <div className={className} onClick={open}>
+    <Trigger className={className} onClick={open} {...props}>
       {children}
-    </div>
+    </Trigger>
   );
 };
 

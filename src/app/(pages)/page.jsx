@@ -17,8 +17,8 @@ export default async function Home({ searchParams }) {
       <Stays />
       <WhyNosara />
       <Tours searchParams={params} />
-      <WhyChooseUs Tag="h6" />
-      <Blog Tag="h6" /> 
+      <WhyChooseUs Tag="h2" />
+      <Blog Tag="h2" /> 
     </main>
   )
 }

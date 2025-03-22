@@ -1,10 +1,8 @@
 "use client";
 
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
-import { HiOutlineSearch, MdCalendarMonth } from "@/icons/index";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Icon } from "../Stateless/Icon";
 import Link from "next/link";
 
 // Función para obtener valores anidados
@@ -55,10 +53,10 @@ export const Search = ({
           placeholder={placeholder}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className={`w-full h-full px-5 outline-none bg-transparent ${inputClassName}`}
+          className={`w-full h-full px-5 outline-hidden bg-transparent ${inputClassName}`}
           aria-label="Search"
         />
-        <HiOutlineSearch className="absolute top-1/2 right-5 -translate-y-1/2 size-6" />
+        <i className="icon-[mage--search] absolute top-5 right-4 size-6" />
       </PopoverTrigger>
       
       {/* Renderizado de resultados */}
@@ -66,16 +64,16 @@ export const Search = ({
         <ul>
           {filteredData.map((item, index) =>
             <li key={index}>
-              <Link href={item.slug ? `Blog/${item?.slug}` : item.url} className="flex gap-3 h-full p-2 rounded transition-colors duration-300 cursor-pointer hover:bg-secondary">
+              <Link href={item.slug ? `/Blog/${item?.slug}` : item.url} className="flex gap-3 h-full p-2 rounded-sm transition-colors duration-300 cursor-pointer hover:bg-secondary">
               {
-                item?.metadata?.image ? <div className="flex-none w-14 h-14 rounded overflow-hidden">
+                item?.metadata?.image ? <div className="flex-none w-14 h-14 rounded-sm overflow-hidden">
                 <Image src={item.metadata.image} alt="" width={200} height={200} className="w-full h-full object-cover" />
               </div> : null 
               }
               <div className="space-y-2">
                 <span className="text-sm-bold line-clamp-2">{item?.metadata?.title || item?.name }</span>
                 <div className="text-sm-medium flex items-center gap-1 text-text">
-                  <Icon name={item?.icon || "MdCalendarMonth" } />
+                  <span name={item?.icon || "MdCalendarMonth" } />
                   <span>{item?.metadata?.date || item.count + " " + item?.label }</span>
                 </div>
               </div>

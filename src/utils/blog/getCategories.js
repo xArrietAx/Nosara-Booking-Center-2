@@ -12,7 +12,7 @@ const imagesCollection = {
 }
 
 export async function getCategories(page, limit) {
-  const posts = await getPosts();
+  const {posts} = await getPosts();
 
   const categoryCounts = posts.reduce((acc, post) => {
     acc[post.metadata.category] = (acc[post.metadata.category] || 0) + 1;
@@ -26,7 +26,7 @@ export async function getCategories(page, limit) {
       label: "Posts",
       url: `/Blog/Categories/${category}`,
       img: imagesCollection[category] || "/DefaultImage.webp",
-      icon: "PiFiles",
+      icon: "icon-[ph--files]",
     }))
     .sort((a, b) => b.count - a.count);
 

@@ -1,0 +1,85 @@
+{
+  "ATV": {
+    "title":"Experience the Ultimate Off-Road Adventure in Nosara with Our ATV Rentals!",
+    "images":["/Rentals/ATV_1.webp",
+          "/Rentals/ATV_2.webp",
+          "/Rentals/ATV_3.webp",
+          "/Rentals/ATV_4.webp",
+          "/Rentals/ATV_5.webp"],
+    "overview": {
+    "one": "Explore Nosara like never before with our top-of-the-line ATV rentals! Whether you're craving an adrenaline-pumping ride through rugged jungle trails or a scenic coastal cruise, our ATVs are built to handle it all. Ride through dirt roads, cross rivers, and discover hidden gems while experiencing the raw beauty of Costa Rica’s diverse landscapes.",
+
+    "two": "Perfect for solo explorers, couples, or groups, our ATVs offer an exciting and safe way to experience the region’s natural wonders. Whether you're heading to a hidden beach or exploring off-the-beaten-path trails, this is the ultimate way to see Nosara. Book your ATV rental today!"
+},
+"models": [
+  {
+    "model":"TRX520",
+    "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Manual / Automatic", "Fuel capacity: 14.7 liters", "Displacement: 518 cc", "Brand: Honda"]
+  },
+  {
+    "model":"TRX420",
+    "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Manual / Automatic", "Fuel capacity: 14.8 liters", "Displacement: 420cc","Brand: Honda"]
+  },
+  {
+    "model":"MXU300R",
+    "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Automatic","Fuel capacity: 12.5 liters", "Displacement: 270 cc", "Brand: Freedom"]
+  },
+  {
+    "model":"MXU270I",
+    "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Automatic", "Fuel capacity: 13 liters", "Displacement: 270 cc", "Brand: Freedom"]
+  }
+]
+  },
+
+  "Golf-cart": {
+    "title":"Cruise Through Nosara in Comfort with Our Premium Golf Cart Rentals!",
+    "images":["/Rentals/GC_1.webp",
+          "/Rentals/GC_2.webp","/Rentals/GC_3.webp", "/Rentals/GC_4.webp","/Rentals/GC_5.webp"],
+    "overview": {
+    "one": "Discover Nosara in comfort and style with our premium golf cart rentals! Whether you're heading to the beach, exploring the town, or cruising through lush tropical roads, our golf carts provide a smooth and effortless ride. Enjoy the fresh ocean breeze as you navigate Nosara’s charming streets, with the freedom to stop and explore at your own pace. Designed for convenience, our carts are easy to drive and perfect for a relaxed, hassle-free experience.",
+    "two": "Ideal for families, couples, or small groups, our golf carts are an eco-friendly and fun way to get around. Skip the traffic and parking struggles while enjoying a more connected experience with the beautiful surroundings. Reserve your golf cart rental today and explore Nosara the easy way!"
+},
+"models": [
+  {
+    "model":"RVX ELITE",
+    "details":["Lithium battery: 56V", "Engine power:  3.3 kW", "Capability: 30 kph", "Seats: 4","Brand: E-Z-G-O"]
+  },
+  {
+    "model":"CROWN 4L PRO",
+    "details":["Lithium battery: 48V", "Engine power: 5 kW", "Capability: 35 kph", "Seats: 4", "Brand: Royal EVolution"]
+  }
+]
+  },
+
+  "Side-by-side": {
+    "title":"Explore Nosara’s Wild Side with Our Off-Road Side-by-Side Rentals!",
+    "images":["/Rentals/SBS_1.webp",
+          "/Rentals/SBS_2.webp",
+          "/Rentals/SBS_3.webp",
+          "/Rentals/SBS_4.webp",
+          "/Rentals/SBS_5.webp"],
+    "overview": {
+    "one": "Take your adventure to the next level with our powerful side-by-side rentals! Designed for performance and comfort, these off-road vehicles are perfect for exploring Nosara’s rugged terrain. Whether you're tackling jungle trails, sandy beaches, or steep hills, our side-by-sides provide the ultimate combination of power and stability. Experience the thrill of off-roading while enjoying breathtaking views and discovering hidden gems along the way.",
+
+    "two": "Perfect for families, groups, or adventure enthusiasts, our side-by-sides offer a safe and exciting way to explore. With their spacious design and high-performance capabilities, you can conquer any terrain with ease. Book your side-by-side rental today and embark on an unforgettable ride through Nosara’s wild landscapes!"
+},
+"models": [
+  {
+    "model":"PIONEER 520",
+    "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Automatic", "Fuel capacity: 15 liters", "Displacement: 518 cc", "Seats: 2", "Brand: Honda"]
+  },
+  {
+    "model":"PIONEER 1000-6 DLX CREW",
+    "details":["Engine: 4-stroke and 2 cylinder", "Transmission: Automatic", "Fuel capacity: 30 liters", "Displacement: 999 cc", "Seats: 6", "Brand: Honda"]
+  },
+  {
+    "model":"UFORCE 1000 XL",
+    "details":["Engine: 4-stroke and 2 cylinder", "Transmission: Automatic", "Fuel capacity: 40 liters", "Displacement: 963 cc", "Seats: 6", "Brand: CFMOTO"]
+  },
+  {
+    "model":"DEFENDER MAX",
+    "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Automatic", "Fuel capacity: 40 liters", "Displacement: 650cc", "Seats: 6", "Brand: can - am"]
+  }
+]
+  }
+}

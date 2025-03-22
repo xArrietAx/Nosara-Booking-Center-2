@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { HiMiniSlash } from "@/icons/index";
 import Link from "next/link";
 
 export function Breadcrumb() {
@@ -20,9 +19,9 @@ export function Breadcrumb() {
 
           return (
             <li key={href} className="flex items-center gap-3">
-              <HiMiniSlash className="size-6" />
+              <span className="text-lg">/</span>
               {isLast ? (
-                <span className="text-black font-bold" >
+                <span className="text-black font-bold line-clamp-1" >
                   {decodeURIComponent(path.replace(/-/g, " "))}
                 </span>
               ) : ( pathArray[0] === "Rentals" ? <span>{decodeURIComponent(path.replace(/-/g, " "))}</span> : 

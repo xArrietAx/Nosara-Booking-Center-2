@@ -1,36 +1,93 @@
 * {
-    --sb-track-color: #ffffff00;
-    --sb-thumb-color: #eff2f7;
-    --sb-size: 8px;
-  }
-  
-  *::-webkit-scrollbar {
-    width: var(--sb-size)
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 15px;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 15px;
-  
-  }
-  
-  @supports not selector(::-webkit-scrollbar) {
-    * {
-      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-    }
-  }
+  --sb-track-color: #ffffff00;
+  --sb-thumb-color: #eff2f7;
+  --sb-size: 8px;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
+*::-webkit-scrollbar {
+  width: var(--sb-size)
+}
 
-  input[type="date"]::-webkit-inner-spin-button,
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 15px;
+
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  -webkit-appearance: none;
+  background: #f2f4f6;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: grab;
+  border: 2.5px solid rgba(0, 0, 0, 0.9);
+
+  box-shadow: -407px 0 0 400px rgba(0, 0, 0, 0.9);
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: #f2f4f6;
+  border: 1px solid #e4e6e8;
+  border-radius: .25rem;
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(0, 0, 0, 0.9);
+}
+
+input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: 4.5px;
+  height: 10px;
+  border: 2px solid white;
+  border-left: none;
+  border-top: none;
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  border-color: #fff;
+  opacity: 1;
 }

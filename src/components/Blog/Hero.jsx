@@ -13,9 +13,9 @@ export async function Hero() {
           <div className="lg:w-1/2">
             <h1 className="text-86-bold break-words">
               {content.hero.title.one}
+            <span className="block text-64-medium">{content.hero.title.two}</span>
             </h1>
-            <h2 className="text-64-medium">{content.hero.title.two}</h2>
-            <h3 className="heading-6 text-text">{content.hero.desc}</h3>
+            <p className="heading-6 text-text">{content.hero.desc}</p>
           </div>
           <div className="mt-5 lg:w-1/2">
             <HeroCarousel categories={categories} />

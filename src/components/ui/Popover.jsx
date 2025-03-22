@@ -9,6 +9,16 @@ export const Popover = ({ children, className, hover = false, clickOutside = fal
   const [isOpen, setIsOpen] = useState(false);
   const popoverRef = useRef(null);
 
+  const open = () => {
+    setIsOpen(true);
+    document.documentElement.style.overflow = "hidden";
+  };
+
+  const close = () => {
+    setIsOpen(false);
+    document.documentElement.style.overflow = "auto";
+  };
+
   useEffect(() => {
     if (!clickOutside) return;
 
@@ -34,7 +44,7 @@ export const Popover = ({ children, className, hover = false, clickOutside = fal
   };
 
   return (
-    <PopoverContext.Provider value={{ isOpen, setIsOpen }}>
+    <PopoverContext.Provider value={{ isOpen, setIsOpen, open, close }}>
       <div
         className={`relative flex ${className}`}
         ref={popoverRef}
@@ -63,10 +73,10 @@ export const PopoverTrigger = ({ children, className, as = "button", onClick, ..
   );
 };
 
-export const PopoverContent = ({ children, className, classNameWrapper, open }) => {
-  const { isOpen, setIsOpen } = useContext(PopoverContext);
+export const PopoverContent = ({ children, className, classNameWrapper, open: __open }) => {
+  const { isOpen, setIsOpen, open, close } = useContext(PopoverContext);
 
-  const isPopoverOpen = open !== undefined ? open : isOpen;
+  const isPopoverOpen = __open !== undefined ? __open : isOpen;
 
   return (
     <AnimatePresence>
@@ -77,9 +87,9 @@ export const PopoverContent = ({ children, className, classNameWrapper, open }) 
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className={`p-3 border border-border rounded-lg text-sm bg-white shadow-2xl ${className}`}
+          className={`p-3 border border-border rounded-lg bg-white shadow-2xl ${className}`}
         >
-          { typeof children === "function" ? children({ isOpen, setIsOpen }) : children }
+          { typeof children === "function" ? children({ isOpen, setIsOpen, open, close }) : children }
         </motion.div>
         </div>
       )}

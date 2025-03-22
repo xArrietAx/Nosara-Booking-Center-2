@@ -1,5 +1,4 @@
 import { Heading } from "@/components/Stateless/Heading";
-import { PiFiles } from "@/icons/index";
 
 export function Hero({ data }) {
   
@@ -22,7 +21,7 @@ export function Hero({ data }) {
             title={name}
             desc={
               <>
-                <PiFiles />
+              <i className="icon-[ph--files] size-6" />
                 {count} {label}
               </>
             }

@@ -2,7 +2,7 @@ import constants from "@/config/constants.json";
 import { getPosts } from "./getPosts";
 
 export async function getTags(page, limit) {
-  const posts = await getPosts();
+  const { posts } = await getPosts();
 
   const tagCounts = posts.reduce((acc, post) => {
     post.metadata.tags.forEach((tag) => {
@@ -18,7 +18,7 @@ export async function getTags(page, limit) {
       label: "Posts",
       url: `Tags/${tag}`,
       img: constants[tag] || "/DefaultImage.webp",
-      icon: "PiFiles",
+      icon: "icon-[ph--files]",
     }))
     .sort((a, b) => b.count - a.count);
 

@@ -1,18 +1,18 @@
 "use client";
 
+import useCreateQueryString from "@/hooks/useCreateQueryString";
 import React, { createContext, useContext } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "./Button";
-import { HiArrowNarrowLeft } from "@/icons/index";
 
 const PaginationContext = createContext();
 
 const PaginationProvider = ({ children, initialPage = 1, total = 1, anchor }) => {
-  const router = useRouter();
 
+  const {createQueryString} = useCreateQueryString()
+  
   const goToPage = (page) => {
     if (page >= 1 && page <= total) {
-      router.push(`?page=${page}${ anchor ? anchor : "" }`);
+      createQueryString("page", page, null, anchor)
     }
   };
 
@@ -58,7 +58,6 @@ const PaginationPrevious = () => {
       variant="secondary"
       onClick={() => goToPage(initialPage - 1)}
     >
-      <HiArrowNarrowLeft />
     </Button>
   );
 };
@@ -75,7 +74,6 @@ const PaginationNext = () => {
       variant="secondary"
       onClick={() => goToPage(initialPage + 1)}
     >
-      <HiArrowNarrowLeft className="rotate-180" />
     </Button>
   );
 };

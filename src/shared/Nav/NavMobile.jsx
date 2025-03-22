@@ -1,6 +1,3 @@
-"use client";
-
-import { HiOutlineMenuAlt1, HiOutlineX } from "@/icons/index";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -14,7 +11,6 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/Accordion";
-import { HiChevronDown } from "@/icons/index";
 
 export function NavMobile() {
   const pathname = usePathname();
@@ -22,7 +18,7 @@ export function NavMobile() {
 
   useEffect(() => {
     setIsOpen(false);
-    close()
+    close();
   }, [pathname]);
 
   function open() {
@@ -38,20 +34,39 @@ export function NavMobile() {
   return (
     <div className="flex items-center justify-between px-3 sm:px-12 xl:hidden">
       <Logo />
-      <Button isIconOnly variant="secondary" onClick={open}>
-        <HiOutlineMenuAlt1 className="size-6" />
+      <Button
+        aria-label="Open menu"
+        isIconOnly="md"
+        variant="secondary"
+        onClick={open}
+      >
+        <i className="icon-[heroicons-outline--menu-alt-1] size-6" />
       </Button>
 
       <AnimatePresence>
         {isOpen && (
           <>
-            <motion.div key="overlay" initial={{ opacity: 0 }} animate={{ opacity: 0.6 }} exit={{ opacity: 0 }} onClick={close} className="fixed inset-0 z-50 bg-black" />
-            <motion.div key="menu" initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }} transition={{ type: "tween", duration: 0.3 }} className="no-scrollbar fixed top-0 right-0 z-50 w-full h-screen text-base bg-white shadow-lg overflow-y-auto sm:w-96" >
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.6 }}
+              exit={{ opacity: 0 }}
+              onClick={close}
+              className="fixed inset-0 z-50 bg-black"
+            />
+            <motion.div
+              key="menu"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="no-scrollbar fixed top-0 right-0 z-50 w-full h-screen text-base bg-white shadow-lg overflow-y-auto sm:w-96"
+            >
               <div className="space-y-3 p-5">
                 <div className="sticky top-0 z-50 flex items-center justify-between py-3 bg-white">
                   <Logo className="w-28" />
-                  <Button isIconOnly variant="secondary" onClick={close}>
-                    <HiOutlineX className="size-6" />
+                  <Button isIconOnly="md" variant="secondary" onClick={close}>
+                    <i className="icon-[heroicons-outline--x] size-7" />
                   </Button>
                 </div>
 
@@ -70,23 +85,52 @@ export function NavMobile() {
 const renderMenuItems = (menu) => {
   return menu.map((item) => {
     return (
-      <AccordionItem as="li" key={item.name} value={item.name} className="flex flex-col">
+      <AccordionItem
+        as="li"
+        key={item.name}
+        value={item.name}
+        className="flex flex-col"
+      >
         {item.url ? (
-          <Link href={item.url} className="px-3 py-2 rounded transition-colors duration-300 hover:bg-secondary">
+          <Link
+            href={item.url}
+            className="px-3 py-2 rounded-sm transition-colors duration-300 hover:bg-secondary"
+          >
             {item.name}
           </Link>
         ) : (
-          <AccordionTrigger icon={(isOpen) => { return <HiChevronDown className={`size-5 transition-transform duration-300 hover:bg-secondary ${ isOpen ? "rotate-180" : "" }`} /> }} className="px-3 py-2 rounded transition-colors duration-300 hover:bg-secondary">
+          <AccordionTrigger
+            icon={(isOpen) => {
+              return (
+                <i
+                  className={`icon-[ion--chevron-down] transition-transform duration-300 ${
+                    isOpen ? "rotate-180" : ""
+                  }`}
+                />
+              );
+            }}
+            className="px-3 py-2 rounded-sm transition-colors duration-300 hover:bg-secondary"
+          >
             {item.name}
           </AccordionTrigger>
         )}
         {item.hasChildren && item.children ? (
-            <AccordionContent>
-              <ul className="ml-2">
-              {renderMenuItems(item.children)}  
-              </ul>            
-            </AccordionContent>
-          ) : <></>}
+          <AccordionContent>
+            <ul className="ml-2">
+              {renderMenuItems(item.children)}
+              {item.name === "Shuttles" && (
+                <Link
+                  href={"/Shuttles"}
+                  className="inline-block w-full px-3 py-2 rounded-sm transition-colors duration-300 hover:bg-secondary"
+                >
+                  Discover more routes!
+                </Link>
+              )}
+            </ul>
+          </AccordionContent>
+        ) : (
+          <></>
+        )}
       </AccordionItem>
     );
   });

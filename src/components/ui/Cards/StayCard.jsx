@@ -1,4 +1,3 @@
-import { MdOutlineBathtub, MdOutlineBed, MdPerson } from "@/icons/index";
 import { Button } from "../Button";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,16 +13,13 @@ export function StayCard({ data }) {
       </div>
       <div className="relative py-5 px-4 rounded-tr-[2rem] rounded-tl-[2rem] -mt-10 bg-white 2xl:py-9 2xl:px-7">
         <div className="flex flex-col gap-3">
-        <span className="heading-6">{name}</span>
+        <Link href="/" className="heading-6">{name}</Link>
         <div className="flex items-center gap-3 text-md-medium text-text">
         <span className="flex items-center gap-1">
-            <MdOutlineBed className="size-5" /> {beds} beds
           </span>
           <span className="flex items-center gap-1">
-            <MdOutlineBathtub className="size-5" /> {baths} bath
           </span>
           <span className="flex items-center gap-1">
-            <MdPerson className="size-5" /> {maxGuests} guest
           </span>
         </div>
         <p className="font-medium text-text line-clamp-2">{information}</p>
@@ -32,7 +28,7 @@ export function StayCard({ data }) {
 
         <div className="flex items-center justify-between mt-6">
           <div className="flex items-center gap-1">
-            <h6 className="heading-6">${price}</h6>
+            <p className="heading-6">${price}</p>
             <p className="text-md-medium text-text">/ night</p>
           </div>
           <div className="card-button">

@@ -27,16 +27,10 @@ import path from "path";
 //   };
 // }
 
-export function getPosts(page, limit, filters = {}) {
-  
+export function getPosts(page = null, limit = null, filters = {}) {
   const allPosts = getMDXData(path.join(process.cwd(), "src/posts"));
 
-  if (!page && !limit && Object.keys(filters).length === 0) {
-    return allPosts;
-  }
-
   const { sortBy, category, duration } = filters;
-
   let filteredPosts = [...allPosts];
 
   if (category) {
@@ -70,8 +64,20 @@ export function getPosts(page, limit, filters = {}) {
     }
   }
 
+  // ✅ Si no hay paginación, devolvemos todo
+  if (!page || !limit) {
+    return {
+      posts: filteredPosts,
+      totalPosts: filteredPosts.length,
+      totalPages: 1,
+      currentRange: `1-${filteredPosts.length}`,
+    };
+  }
+
+  // Aplicar paginación si existe
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
+  
   const posts = filteredPosts.slice(startIndex, endIndex);
 
   const currentStart = startIndex + 1;
@@ -84,4 +90,3 @@ export function getPosts(page, limit, filters = {}) {
     currentRange: `${currentStart}-${currentEnd}`,
   };
 }
-

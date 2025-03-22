@@ -53,23 +53,23 @@
           "children": [
             {
               "name": "LIR - Nosara",
-              "url": "/LIR - Nosara"
+              "url": "/Shuttles/LIR-Nosara"
             },
             {
               "name": "Nosara - Tamarindo",
-              "url": "/Nosara - Tamarindo"
+              "url": "/Shuttles/Nosara-Tamarindo"
             },
             {
               "name": "Samara - LIR",
-              "url": "/Samara - LIR"
+              "url": "/Shuttles/Samara-LIR"
             },
             {
               "name": "Monteverde - Nosara",
-              "url": "/Monteverde - Nosara"
+              "url": "/Shuttles/Monteverde-Nosara"
             },
             {
               "name": "San José - Nosara",
-              "url": "/San José - Nosara"
+              "url": "/Shuttles/SJO-Nosara"
             }
           ]
         },
@@ -78,16 +78,16 @@
           "hasChildren": true,
           "children": [
             {
-              "name": "Samara - Nosara",
-              "url": "Samara - Nosara"
+              "name": "LIR - Nosara",
+              "url": "/Shuttles/LIR-Nosara"
             },
             {
               "name": "Samara - San José",
-              "url": "Samara - San José"
+              "url": "/Shuttles/Samara-SJO"
             },
             {
               "name": "San José - Nosara",
-              "url": "/San José - Nosara"
+              "url": "/Shuttles/SJO-Nosara"
             }
           ]
         }
@@ -105,17 +105,18 @@
         },
         {
           "name": "Golf cart",
-          "url": "/Rentals/Golf cart",
+          "url": "/Rentals/Golf-cart",
           "description": "For easy transport."
         },
         {
-          "name": "Car",
-          "url": "/Rentals/Car",
-          "description": "For efficient travel."
+          "name": "Side by side",
+          "url": "/Rentals/Side-by-side",
+          "description": "For powerful and comfortable rides."
         }
       ]
     }
   ],
+
   "footer": [
     {
       "title": "Pages",
@@ -160,15 +161,16 @@
         },
         {
           "name": "Golf cart",
-          "url": "/Rentals/Golf cart"
+          "url": "/Rentals/Golf-cart"
         },
         {
-          "name": "Car",
-          "url": "/Rentals/Car"
+          "name": "Side by side",
+          "url": "/Rentals/Side-by-side"
         }
       ]
     }
   ],
+
   "footerCopyright": [
     {
       "name": "Privacy & Policy",

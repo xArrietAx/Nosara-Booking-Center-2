@@ -2,20 +2,21 @@
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
 import { BookingContext } from "@/context/BookingContext";
-import { HiPencil, MdPerson } from "@/icons/index";
-import { Button } from "@/components/ui/Button";
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { GolfCart } from "./GolfCart";
 import { Shuttle } from "./Shuttle";
 import Link from "next/link";
 import { ATV } from "./Atv";
-import { Car } from "./Car";
+import { SideBySide } from "./SideBySide";
+import useCreateQueryString from "@/hooks/useCreateQueryString";
+import { Content } from "./Content";
 
 export function SearchBar() {
 
-  const { data, updateData, reset } = useContext(BookingContext)
+  const { data, updateData, reset, errors } = useContext(BookingContext)
   const { push } = useRouter()
+  const { createQueryString } = useCreateQueryString()
 
   useEffect(() => {
     reset()
@@ -33,23 +34,26 @@ export function SearchBar() {
       content: <ATV data={data} updateData={updateData} />,
     },
     {
-      value: "Golf cart",
+      value: "Golf-cart",
       label: "Golf cart",
       content: <GolfCart data={data} updateData={updateData} />,
     },
     {
-      value: "Car",
-      label: "Car",
-      content: <Car data={data} updateData={updateData} />,
+      value: "Side-by-side",
+      label: "Side by side",
+      content: <SideBySide data={data} updateData={updateData} />,
     },
   ];
 
   function handleSubmit(e, tab) {
   e.preventDefault()
-  if(tab === "Shuttle") return 
+
+  if(tab === "Shuttle") {
+    const { pickUpLocation, dropOffLocation, pickUp: date, adults, children } = data
+    return createQueryString({ pickUpLocation, dropOffLocation, date, adults, children }, null, "Shuttles", "shuttles")
+  }
   
   push(`/Rentals/${tab}`)
-
   }
 
   return (
@@ -63,32 +67,26 @@ export function SearchBar() {
             key={item.value}
             size="sm"
             value={item.value}
-            className="font-normal"
+            className="!px-3"
             onClick={reset}
           >
             {item.label}
           </TabsTrigger>
         ))}
       </TabsList>
-      <div className="flex items-center gap-2 text-sm-medium text-text">
-        <MdPerson className="size-4" />
-        <Link href="/Contact">Need some help?</Link>
+      <div className="flex items-center gap-1 text-sm-medium">
+        <i className="icon-[bi--person-fill] text-text/50 size-4" />
+        <Link href="/Contact" className="link-reverse" >Need some help?</Link>
       </div>
     </div>
 
-    <form onSubmit={e => handleSubmit(e, activeTab)} className="grid items-center py-5 border border-border rounded-2xl sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-      {tabList.map((item) => (
+    <Content handleSubmit={e => handleSubmit(e, activeTab)}>
+    {tabList.map((item) => (
         <TabsContent key={item.value} value={item.value}>
           {item.content}
         </TabsContent>
       ))}
-
-      <div className="px-7 pt-4 mb-4 font-bold sm:col-span-2 lg:col-span-4 lg:mb-0 xl:col-span-1 xl:pt-0">
-        <Button size="lg" className="w-full h-full">
-          <HiPencil className="size-5" /> Booking
-        </Button>
-      </div>
-    </form>
+    </Content>
   </>
   }}
 </Tabs>

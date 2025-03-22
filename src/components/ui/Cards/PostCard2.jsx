@@ -1,4 +1,3 @@
-import { HiOutlineClock, MdCalendarMonth } from "@/icons/index";
 import { BtnInfo } from "@/components/Stateless/BtnInfo";
 import { Button } from "../Button";
 import Image from "next/image";
@@ -40,8 +39,8 @@ export function PostCard2({ data }) {
           {title}
         </Link>
 
-        <div className="flex flex-wrap items-center gap-3 mb-3 text-text lg:font-medium lg:text-sm">
-          <span className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center gap-3 mb-3 lg:font-medium lg:text-sm">
+          <div className="flex items-center gap-1">
             <div className="w-6 h-6 rounded-full overflow-hidden">
               <Image
                 src={"/blog/user.webp"}
@@ -51,14 +50,16 @@ export function PostCard2({ data }) {
                 className="w-full h-full object-cover"
               />
             </div>
-            {author}
-          </span>
-          <span className="flex items-center gap-1">
-            <MdCalendarMonth /> {date}
-          </span>
-          <span className="flex items-center gap-1">
-            <HiOutlineClock /> {duration} mins
-          </span>
+            <p>{author}</p>
+          </div>
+          <div className="flex items-center gap-1">
+          <i className="icon-[mage--calendar-2] text-text size-4" />
+            <p>{date}</p>
+          </div>
+          <div className="flex items-center gap-1">
+          <i className="icon-[mage--clock] text-text size-4" />
+            <p>{duration} mins</p>
+          </div>
         </div>
 
         <p className="max-w-[30rem] mb-7 text-md-medium text-text line-clamp-2">

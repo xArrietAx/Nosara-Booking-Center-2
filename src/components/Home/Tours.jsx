@@ -1,6 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import { ToursCard } from "../ui/Cards/ToursCard";
-// import { ToursFilter } from "./ToursFilter";
+import { ToursFilter } from "./ToursFilter";
 import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/home.json";
 
@@ -34,12 +34,12 @@ export async function Tours({ searchParams }) {
       <div className="container">
         <div className="flex flex-col gap-10 text-center lg:flex-row lg:items-end lg:justify-between lg:text-start">
           <Heading
-            as="h5"
+            as="h2"
             title={content.tours.title}
             desc={content.tours.desc}
             classNameTitle="heading-2"
           />
-          {/* <ToursFilter tours={tours} /> */}
+          <ToursFilter tours={tours} />
         </div>
 
         <div className="mt-10">

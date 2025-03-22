@@ -1,4 +1,3 @@
-import { HiOutlineClock, MdCalendarMonth } from "@/icons/index";
 import { BtnInfo } from "@/components/Stateless/BtnInfo";
 import { Button } from "../Button";
 import Image from "next/image";
@@ -13,7 +12,7 @@ export function PostCard({ data }) {
         <BtnInfo
           size="sm"
           variant="secondary"
-          className="absolute top-5 left-5"
+          className="absolute top-5 left-5 font-bold!"
         >
           {category}
         </BtnInfo>
@@ -27,23 +26,22 @@ export function PostCard({ data }) {
       </div>
       <div className="relative p-7 rounded-tr-[2rem] rounded-tl-[2rem] -mt-10 bg-white">
         <div className="flex flex-wrap items-center gap-3 mb-3 text-text">
-          <span className="flex items-center gap-1">
-            <MdCalendarMonth /> {date}
-          </span>
-          <span className="flex items-center gap-1">
-            <HiOutlineClock /> {duration} mins
-          </span>
+          <p className="flex items-center gap-1">
+            <i className="icon-[mage--calendar-2] text-text size-4" />
+            <span>{date}</span>
+          </p>
+          <p className="flex items-center gap-1">
+            <i className="icon-[mage--clock] text-text size-4" />
+            <span>{duration} mins</span>
+          </p>
         </div>
-        <Link
-          href={`/Blog/${data.slug}`}
-          className="link text-xl-bold inline-block mb-8"
-        >
+        <Link href={`/Blog/${data.slug}`} className="link text-xl-bold inline-block mb-8" >
           {title}
         </Link>
 
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
           <span className="text-sm-bold flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full overflow-hidden">
+            <div className="w-8 h-8 rounded-full overflow-hidden">
               <Image
                 src={"/blog/user.webp"}
                 width={50}
@@ -60,7 +58,7 @@ export function PostCard({ data }) {
             size="sm"
             variant="secondary"
             hover="primary"
-            className="w-fit border border-border"
+            className="w-full border border-border !font-bold min-[358px]:w-fit"
           >
             Keep Reading
           </Button>

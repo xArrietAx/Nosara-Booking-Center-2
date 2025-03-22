@@ -18,12 +18,12 @@ export function Button({
     "inline-flex items-center justify-center gap-2 border-border font-bold transition-all duration-300",
     {
       "rounded-full": radius === "full",
-      "rounded": radius === "smooth",
+      "rounded-sm": radius === "smooth",
       "rounded-none": radius === "none",
 
       "text-white bg-primary": variant === "primary",
       "bg-secondary": variant === "secondary",
-      "border  hover:text-white hover:bg-primary": variant === "outline",
+      "border hover:text-white hover:bg-primary": variant === "outline",
       "bg-transparent hover:bg-secondary": variant === "ghost",
 
       
@@ -39,8 +39,9 @@ export function Button({
       "px-[1.375rem] py-3": size === "md" && !isIconOnly,
       "px-[1.625rem] py-4": size === "lg",
     
+      "w-6 h-6": isIconOnly === "xs",
       "w-8 h-8": isIconOnly === "sm",
-      "w-10 h-10": isIconOnly,
+      "w-10 h-10": isIconOnly === "md",
       "w-12 h-12": isIconOnly === "lg",
     },
     className

@@ -1,13 +1,23 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import { cloneElement, Children, createContext, useContext, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Icon } from "@/components/Stateless/Icon";
 
 const AccordionContext = createContext();
 
 const Accordion = ({ type = "single", as: Tag = "div", collapsible = false, children, className }) => {
   const [openItems, setOpenItems] = useState([]);
+
+  useEffect(() => {
+    const defaultOpen = Children.map(children, (child) => {
+      if (child.props.open) {
+        return child.props.value;
+      }
+      return null;
+    }).filter(Boolean);
+
+    setOpenItems(type === "single" ? [defaultOpen[0]] : defaultOpen);
+  }, [children, type]);
 
   const toggleItem = (value) => {
     setOpenItems((prev) => {
@@ -33,18 +43,18 @@ const Accordion = ({ type = "single", as: Tag = "div", collapsible = false, chil
   );
 };
 
-const AccordionItem = ({ value, as: Tag = "div", children, className }) => {
+const AccordionItem = ({ value, as: Tag = "div", open = false, children, className }) => {
   const { openItems, toggleItem } = useContext(AccordionContext);
   const isOpen = openItems.includes(value);
 
   return (
     <Tag className={className}>
-      {React.Children.map(children, (child) => {
+      {Children.map(children, (child) => {
         if (child.type === AccordionTrigger) {
-          return React.cloneElement(child, { isOpen, onClick: () => toggleItem(value) });
+          return cloneElement(child, { isOpen, onClick: () => toggleItem(value) });
         }
         if (child.type === AccordionContent) {
-          return React.cloneElement(child, { isOpen });
+          return cloneElement(child, { isOpen });
         }
         return child;
       })}

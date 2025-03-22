@@ -1,0 +1,35 @@
+@plugin "@iconify/tailwind4";
+
+@theme {
+    
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 575px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1792px;
+
+  --color-primary: #000;
+  --color-secondary: #f2f4f6;
+  --color-sectionBg: #f9fafb;
+  --color-text: #737373;
+  --color-border: #e4e6e8;
+
+  --shadow-card: 0 6px 22px 0 rgba(0, 0, 0, .09);
+
+}
+
+@utility container {
+  max-width: unset;
+  width: unset;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@custom-variant hover (&:hover);

@@ -12,8 +12,8 @@ export default function About() {
       <Hero />
       <Video />
       <Offer />
-      <WhyChooseUs Tag="h3" />
-      <Blog Tag="h4" />
+      <WhyChooseUs Tag="h2" />
+      <Blog Tag="h2" />
     </main>
   );
 }

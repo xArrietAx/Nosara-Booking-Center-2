@@ -13,20 +13,20 @@ export function WhyNosara() {
             
             <BtnInfo img={content.whyNosara.btnInfo.img} >{content.whyNosara.btnInfo.text}</BtnInfo>
 
-            <Heading as="h4" title={content.whyNosara.title} classNameTitle="heading-2 my-4"  desc={content.whyNosara.desc} classNameDesc="mb-8 !text-black" />
+            <Heading as="h2" title={content.whyNosara.title} classNameTitle="heading-2 my-4"  desc={content.whyNosara.desc} classNameDesc="mb-8 !text-black" />
 
-            <div className="flex flex-wrap items-center gap-5">
+            <ul className="flex flex-wrap items-center gap-5">
               {content.whyNosara.statistics.map((item) => {
                 return (
-                  <div className="flex flex-1 flex-col" key={item.quantity}>
-                    <h3 className="heading-3">{item.quantity}</h3>
-                    <p className="text-lg-bold text-text">
+                  <li className="flex flex-1 flex-col" key={item.quantity}>
+                    <span className="heading-3">{item.quantity}</span>
+                    <span className="text-lg-bold text-text">
                       {item.desc.one} <br /> {item.desc.two}
-                    </p>
-                  </div>
+                    </span>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
 
           <ul className="grid flex-1 gap-6 w-full sm:grid-cols-2">
@@ -43,9 +43,9 @@ export function WhyNosara() {
               <div className="w-14 h-14 border border-border rounded-full mx-auto mb-3 overflow-hidden shadow-xl">
                 <Image src={item.img} width={300} height={300} alt="" className="w-full h-full object-cover" />
               </div>
-              <span className="text-xl-bold inline-block mb-2">
+              <h3 className="text-xl-bold inline-block mb-2">
                 {item.title}
-              </span>
+              </h3>
               <p className="text-lg-medium text-text">
               {item.desc}
               </p>

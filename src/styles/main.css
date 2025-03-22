@@ -1,13 +1,13 @@
-@import url("./base.css");
-@import url("./globals.css");
-@import url("./utilities.css");
-@import url("./reactDatePicker.css");
-@import url("swiper/css");
-@import url("swiper/css/navigation");
-@import url("swiper/css/pagination");
-@import url("./swiper.css");
-@import url("./blog.css");
+@import "tailwindcss";
+@import "./base.css";
+@import "./tailwind.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "./globals.css";
+@import "./utilities.css";
+@import "./reactDatePicker.css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/thumbs";
+@import "./swiper.css";
+@import "./blog.css";

@@ -1,5 +1,4 @@
 import { createTransport } from "nodemailer";
-import { format, parseISO } from "date-fns";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -8,10 +7,7 @@ export async function POST(req) {
 
     const body = await req.json();
 
-    body.pickUp = format(parseISO(body.pickUp), 'MM-dd-yyyy');
-    body.dropOff = format(parseISO(body.dropOff), 'MM-dd-yyyy');
-
-    if (body.isAccepted) {
+    if (!body.isAccepted) {
       return NextResponse.json({}, {status:400, statusText:"Please agree to our Terms of Service and Privacy Policy before continuing"});
     }
 
@@ -26,7 +22,7 @@ export async function POST(req) {
     });
 
     const rentalEmail = `
-    <h1>${body.name} quiere renta ${body.rent}</h1>
+    <h1>${body.name} quiere rentar ${body.rent}</h1>
     <p>Email del cliente: ${body.email}</p>
     <p>Numero del cliente: ${body.phone}</p>
     <br />

@@ -1,5 +1,4 @@
 import { Button } from "../ui/Button";
-import { HiArrowNarrowLeft } from "@/icons/index";
 import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/home.json";
 import Link from "next/link";
@@ -8,7 +7,7 @@ import { getPosts } from "@/utils/blog/getPosts";
 
 export async function Blog({ Tag }) {
 
-  const posts = await getPosts();
+  const { posts } = await getPosts();
 
   return (
     <section className="section-space">
@@ -24,20 +23,22 @@ export async function Blog({ Tag }) {
 
           <div className="flex justify-end gap-2 w-full md:w-fit">
             <Button
-              isIconOnly
+              isIconOnly="md"
               variant="secondary"
               hover="primary"
-              className="blog-btn-prev"
+              className="blog-btn-prev rotate-180"
+              aria-label="move the carrousel to the left"
             >
-              <HiArrowNarrowLeft />
+              <i className="icon-[ion--arrow-forward] size-5" />
             </Button>
             <Button
-              isIconOnly
+              isIconOnly="md"
               variant="secondary"
               hover="primary"
-              className="blog-btn-next rotate-180"
+              className="blog-btn-next"
+              aria-label="move the carrousel to the right"
             >
-              <HiArrowNarrowLeft />
+              <i className="icon-[ion--arrow-forward] size-5" />
             </Button>
           </div>
         </div>
@@ -52,7 +53,7 @@ export async function Blog({ Tag }) {
 
         <div className="flex justify-center mt-12">
           <Button as={Link} href="Blog">
-            View More <HiArrowNarrowLeft className="rotate-180 size-6" />
+            View More <i className="icon-[ion--arrow-forward] size-5" />
           </Button>
         </div>
       </div>

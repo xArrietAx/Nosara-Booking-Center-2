@@ -10,7 +10,7 @@ export function Hero() {
         <div className="flex flex-wrap items-end gap-6">
 
           <div className="lg:w-3/5">
-            <BtnInfo variant="secondary" className="w-fit mb-4" img={content.hero.btnInfo.img}>
+            <BtnInfo variant="primary" className="w-fit mb-4" img={content.hero.btnInfo.img}>
               {content.hero.btnInfo.text}
             </BtnInfo>
             <Heading
@@ -18,8 +18,8 @@ export function Hero() {
               title={
                 <>
                   {content.hero.title.one}
-                  <span className="font-medium"> {content.hero.title.two}</span> <br />
-                  <span className="font-medium"> {content.hero.title.three} </span>
+                  <span className="font-normal"> {content.hero.title.two}</span> <br />
+                  <span className="font-normal"> {content.hero.title.three} </span>
                    {content.hero.title.four}
                 </>
               }

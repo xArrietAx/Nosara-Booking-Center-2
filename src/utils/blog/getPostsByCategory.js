@@ -1,7 +1,8 @@
 import { getPosts } from "./getPosts";
 
 export async function getPostsByCategory(category, page, limit) {
-  const allPosts = await getPosts();
+
+  const { posts: allPosts } = await getPosts();
 
   const filteredPosts = allPosts.filter(
     (post) => post.metadata.category === category

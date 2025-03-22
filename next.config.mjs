@@ -11,6 +11,12 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "static1.simpleflyingimages.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
         port: "",
         pathname: "/**",

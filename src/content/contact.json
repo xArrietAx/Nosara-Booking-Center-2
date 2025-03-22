@@ -16,13 +16,13 @@
     "bg-img": "/contact/bg-contact.webp",
     "cards": [
         {
-            "title": "Email",
+            "title": "Help support",
             "desc": "Send us your inquiries and we'll respond promptly.",
             "method": {
                 "info":"nbc@nosarabookingcenter.com",
                 "url": "mailto:nbc@nosarabookingcenter.com"
             },
-            "icon": "MdOutlineMail"
+            "icon": "icon-[famicons--mail-outline]"
           },
           {
             "title": "Operating Hours",
@@ -30,7 +30,7 @@
             "method": {
                 "info":"Mon - Sun: 9:00 am - 5:00 pm"
             },
-            "icon": "HiOutlineClock"
+            "icon": "icon-[famicons--time-outline]"
           },
           {
             "title": "WhatsApp Us",
@@ -39,7 +39,7 @@
                 "info":"+506 8601 2266",
                 "url": "https://wa.me/50686012266?text=Hello Nosara Booking Center."
             },
-            "icon": "MdWhatsapp"
+            "icon": "icon-[famicons--logo-whatsapp]"
           },
           {
             "title": "FAQs",
@@ -48,7 +48,7 @@
                 "info":"View FAQs",
                 "url": "#Faqs"
             },
-            "icon": "MdHelpOutline"
+            "icon": "icon-[famicons--book-outline]"
           }
     ]
   },

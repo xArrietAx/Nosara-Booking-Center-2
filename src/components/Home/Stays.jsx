@@ -1,5 +1,4 @@
 import { createClient } from "@/utils/supabase/server";
-import { HiArrowNarrowLeft } from "@/icons/index";
 import { StayCarousel } from "./StaysCarousel";
 import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/home.json";
@@ -17,13 +16,13 @@ export async function Stays() {
       <div className="container">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <Heading
-            as="h3"
+            as="h2"
             title={content.stays.title}
             desc={content.stays.desc}
             classNameTitle="heading-2"
           />
           <Button as={Link} href="Vacation_rentals" >
-            View More <HiArrowNarrowLeft className="rotate-180 size-6" />
+            View More <i className="icon-[ion--arrow-forward] size-5" />
           </Button>
         </div>
 

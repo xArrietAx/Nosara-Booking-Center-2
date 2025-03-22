@@ -1,15 +1,13 @@
-/* Contenedor principal */
 .react-datepicker {
 
-  }
+}
   
-  /* Encabezado del mes */
   .react-datepicker__header {
   }
 
 
   .datepicker-header{
-   @apply flex justify-between mt-2 mb-4
+   @apply flex justify-between mt-2 mb-[18px]
   }
   
   .react-datepicker__current-month {
@@ -19,12 +17,10 @@
     @apply flex justify-between text-text text-sm
   }
   
-  /* Días de la semana */
   .react-datepicker__day-name {
-    @apply w-10 text-center
+    @apply w-10 font-semibold text-center
   }
   
-  /* Contenedor de los días */
   .react-datepicker__month {
     @apply mt-1
   }
@@ -38,32 +34,26 @@
   }
   
   
-  /* Estilos de los días */
   .react-datepicker__day {
-    @apply flex items-center justify-center w-8 h-8 rounded m-1 font-medium text-sm cursor-pointer transition-colors duration-300
+    @apply flex flex-1 items-center justify-center w-8 h-8 rounded-sm m-1 font-medium text-sm cursor-pointer transition-colors duration-300
   }
   
-  /* Días seleccionados */
   .react-datepicker__day--selected {
     @apply bg-secondary
   }
   
-  /* Día actual */
   .react-datepicker__day--today {
     @apply border
   }
   
-  /* Hover sobre los días */
   .react-datepicker__day:hover {
     @apply bg-secondary
   }
   
-  /* Botones de navegación */
   .react-datepicker__navigation {
-    @apply rounded transition-colors duration-300 hover:bg-secondary
+    @apply flex items-center justify-center w-6 h-6 rounded-sm transition-colors duration-300 hover:bg-secondary
   }
   
-  /* Deshabilitar días */
   .react-datepicker__day--disabled {
     @apply opacity-45 cursor-not-allowed hover:bg-transparent
   }
@@ -74,10 +64,16 @@
 
 
   .react-datepicker__time-list-item{
-    @apply p-2 rounded transition-colors duration-300;
+    @apply p-2 rounded-sm transition-colors duration-300;
 
     &:hover {
       @apply bg-secondary text-black cursor-pointer
     }
 
   }
+
+@media (max-width: 350px) {
+  .react-datepicker__day {
+    @apply text-[13px]
+  } 
+} 

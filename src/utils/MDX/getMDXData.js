@@ -20,7 +20,7 @@ function getMDXFiles(dir) {
       let slug = path.basename(file, path.extname(file));
   
       return {
-        metadata: { ...metadata, date: format(parseISO(metadata.date), "dd MMM yyyy") },
+        metadata: { ...metadata, date: metadata.date ? format(parseISO(metadata.date), "dd MMM yyyy") : null },
         slug,
         content,
       };

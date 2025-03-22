@@ -13,7 +13,7 @@
 }
 
 .bg-hover {
-    @apply p-1 rounded transition-colors duration-300;
+    @apply p-1 rounded-sm transition-colors duration-300;
 
     &:hover {
         @apply bg-primary text-white cursor-pointer
@@ -22,7 +22,7 @@
 }
 
 .bg-hover-secondary {
-    @apply p-1 rounded transition-colors duration-300;
+    @apply p-1 rounded-sm transition-colors duration-300;
 
     &:hover {
         @apply bg-secondary text-black cursor-pointer

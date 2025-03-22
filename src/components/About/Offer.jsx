@@ -1,4 +1,3 @@
-import { HiArrowNarrowLeft, MdWhatsapp } from "@/icons/index";
 import { Heading } from "@/components/Stateless/Heading";
 import content from "@/content/about.json";
 import Link from "next/link";
@@ -22,11 +21,9 @@ export function Offer() {
           />
           </div>
           <div className="flex flex-1 flex-col gap-3 lg:items-end">
-            <span className="text-lg-bold">{content.offer.help.text}</span>
+            <p className="text-lg-bold">{content.offer.help.text}</p>
             <Link  href="https://wa.me/50686012266?text=Hello Nosara Booking Center." target="_blank" className="flex items-center gap-2">
-              <Button as="div" isIconOnly="sm" className="border !border-black !text-black bg-transparent" >
-                <MdWhatsapp className="size-5" />
-              </Button>
+            <i className="icon-[famicons--logo-whatsapp] size-8" />
             <span className="heading-6">{content.offer.help.phone}</span>
             </Link>
           </div>
@@ -45,14 +42,13 @@ export function Offer() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col gap-3">
-                  <span className="text-xl-bold">{item.title}</span>
+                  <h3 className="text-xl-bold">{item.title}</h3>
                   <p className="text-sm-medium text-text">{item.desc}</p>
                   <Link
                     href={item.url}
-                    className="link text-sm-medium flex items-center gap-3 w-fit mt-auto"
+                    className="link text-sm-medium flex items-center gap-2 w-fit mt-auto"
                   >
-                    {item.info}
-                    <HiArrowNarrowLeft className="-rotate-180" />
+                    {item.info} <i className="icon-[ion--arrow-forward] size-4" />
                   </Link>
                 </div>
               </div>

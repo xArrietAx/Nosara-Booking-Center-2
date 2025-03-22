@@ -12,7 +12,7 @@ export function Destinations() {
           {content.destinations.cards.map(item => {
             return (
               <li key={item.name}>
-                <SmallCard data={{icon: "HiOutlineClock", ...item}} />
+                <SmallCard data={{icon: "icon-[mage--flag-fill]", ...item}} />
               </li>
             );
           })}

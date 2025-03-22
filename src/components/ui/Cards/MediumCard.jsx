@@ -1,8 +1,6 @@
-import { HiArrowNarrowLeft } from "@/icons/index";
 import { Button } from "../Button";
 import Link from "next/link";
 import Image from "next/image";
-import { Icon } from "@/components/Stateless/Icon";
 
 export function MediumCard({ data }) {
 
@@ -19,11 +17,11 @@ export function MediumCard({ data }) {
         </Link>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1 text-text">
-          <Icon name={icon} />
+            <i className={icon} />
           <span className="text-sm-medium">{count} {label}</span>
           </div>
             <Button as={Link} href={url} isIconOnly variant="secondary" hover="primary" className="w-6 h-6" >
-          <HiArrowNarrowLeft className="rotate-180 size-4" />
+              <i className="icon-[ion--arrow-forward]" />
         </Button>
         </div>
       </div>

@@ -19,9 +19,9 @@ export function Gallery({ gallery }) {
     }
   return (
     <div className="p-7 border border-border rounded-lg">
-      <span className="text-xl-bold inline-block w-full pb-5 border-b border-border mb-8">
+      <h3 className="text-xl-bold inline-block w-full pb-5 border-b border-border mb-8">
         Gallery
-      </span>
+      </h3>
           
            <ul className="flex flex-wrap items-center -mx-2">
             {gallery.slice(0, 9).map((item, i) => {

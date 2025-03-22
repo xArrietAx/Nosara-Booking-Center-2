@@ -1,13 +1,12 @@
-import { MdCalendarMonth, HiOutlineClock } from "@/icons/index";
 import { BtnInfo } from "../Stateless/BtnInfo";
 import content from "@/content/blog.json";
-import { getRecentPosts } from "@/utils/blog/getRecentPosts";
+import { getPosts } from "@/utils/blog/getPosts";
 import Image from "next/image";
 import Link from "next/link";
 
 export async function SomeBlogs() {
   
-  const posts = await getRecentPosts();
+  const { posts } = await getPosts(null, null, { sortBy:"recent" });
 
   return (
     <section className="section-space">
@@ -46,12 +45,12 @@ function Right({ posts }) {
                     {item.metadata.title}
                   </Link>
                   <div className="text-md-bold flex flex-wrap items-center gap-3 text-text">
-                    <div className="flex items-center gap-1">
-                      <MdCalendarMonth />{" "}
+                    <div className="flex items-center gap-2">
+                      <i className="icon-[mage--calendar-2]" />
                       <span className="line-clamp-1">{item.metadata.date}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <HiOutlineClock />{" "}
+                    <div className="flex items-center gap-2">
+                    <i className="icon-[mage--clock]" />
                       <span className="line-clamp-1">
                         {item.metadata.duration} mins
                       </span>

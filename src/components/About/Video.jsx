@@ -10,8 +10,8 @@ export function Video() {
           <Image
             src={content.story.img}
             alt=""
-            width={1116}
-            height={540}
+            width={1100}
+            height={600}
             className="w-full h-full object-cover"
           />
           <VideoModal />

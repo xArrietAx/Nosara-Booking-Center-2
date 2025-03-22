@@ -1,8 +1,7 @@
-import { MdLocationPin } from "@/icons/index";
+
 import content from "@/content/contact.json";
 import { Heading } from "@/components/Stateless/Heading";
 import { Button } from "../ui/Button";
-import { Icon } from "../Stateless/Icon";
 import Link from "next/link";
 
 export function Hero() {
@@ -18,7 +17,7 @@ export function Hero() {
             title={
               <>
                 {content.hero.title.one}{" "}
-                <span className="font-extrabold text-primary">
+                <span className="font-extrabold">
                   {content.hero.title.two}
                 </span>{" "}
                 <br />
@@ -27,12 +26,12 @@ export function Hero() {
             }
             desc={content.hero.desc}
             className="space-y-4"
-            classNameTitle="heading-1 font-normal"
+            classNameTitle="font-normal!"
           />
           <div className="flex flex-col mt-auto">
-            <span className="flex items-center text-lg-bold">
-              <MdLocationPin className="size-5" /> {content.hero.location.title}
-            </span>
+            <h2 className="flex items-center gap-1 text-lg-bold">
+           <i className="icon-[bi--geo-alt-fill] size-4" /> {content.hero.location.title}
+            </h2>
             <p className="text-md-medium text-text">
               {content.hero.location.desc.one} <br /> {content.hero.location.desc.two}
             </p>
@@ -48,16 +47,16 @@ export function Hero() {
               >
                 <Button
                   as="div"
-                  isIconOnly
+                  isIconOnly="lg"
                   radius="smooth"
                   variant="outline"
                   hover="outline"
                   className="border-black"
                 >
-                  <Icon name={item.icon} className="text-black size-6" />
+                  <i className={`${item.icon} size-7`} />
                 </Button>
                 <div className="space-y-2">
-                  <span className="text-lg-bold">{item.title}</span>
+                  <h2 className="text-lg-bold">{item.title}</h2>
                   <p className="font-medium text-text">{item.desc}</p>
                 </div>
                 {

@@ -6,12 +6,13 @@ import { PostCard2 } from "../ui/Cards/PostCard2";
 import { Pagination } from "../ui/Pagination";
 
 export async function Blogs({ searchParams }) {
+
   const queries = await searchParams;
 
   const page = parseInt(queries.page) || 1;
-  const postsPerPage = 4;
+  const limit = 4;
 
-  const { posts, totalPages } = await getPosts(page, postsPerPage);
+  const { posts, totalPages } = await getPosts(page, limit, { sortBy: "recent" });
 
   return (
     <section className="section-space" id="blogs">
@@ -20,7 +21,7 @@ export async function Blogs({ searchParams }) {
           <div className="flex flex-col gap-12 lg:w-2/3">
             <div>
             <Heading
-              as="h3"
+              as="h2"
               title={content.blogs.title}
               desc={content.blogs.desc}
               classNameTitle="heading-2"
@@ -39,7 +40,7 @@ export async function Blogs({ searchParams }) {
           showControls={false}
           initialPage={page}
           total={totalPages}
-          anchor="#blogs"
+          anchor="blogs"
           className="gap-2 mt-auto"
         />
           </div>

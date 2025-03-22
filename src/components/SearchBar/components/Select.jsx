@@ -1,14 +1,12 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
-import { Icon } from "@/components/Stateless/Icon";
-import { HiChevronDown } from "@/icons/index";
 
 export function Select({ children, value, iconName, placeholder, name }) {
   return (
     <Popover clickOutside>
-      <PopoverTrigger type="button" className="flex flex-1 items-center gap-1 text-sm" >
-        <Icon name={iconName} className="flex-none text-text size-[1.1rem]" />
-        <input type="text" name={name} required placeholder={placeholder} className="w-24 font-bold outline-none cursor-pointer placeholder-black caret-transparent" value={value} onChange={() => {}} />
-        <HiChevronDown className="ml-auto size-[1.1rem]" />
+      <PopoverTrigger type="button" className="flex flex-1 items-center gap-2 text-sm" >
+       <i className={`${iconName} flex-none text-text/50 size-[17px]`} />
+        <input type="text" name={name} required placeholder={placeholder} inputMode="none" className="w-24 font-bold outline-hidden cursor-pointer placeholder-black caret-transparent" value={value} onChange={() => {}} />
+        <i className="icon-[ion--chevron-down] flex-none ml-auto" />
       </PopoverTrigger>
       <PopoverContent className="mt-2">
         {children}
