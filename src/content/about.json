@@ -28,60 +28,60 @@
     },
     "cards": [
       {
-        "title": "Tours",
-        "desc": "Discover amazing tours to explore stunning destinations with expert guides.",
-        "icon": "/about/tours_emoji.webp",
-        "info": "Book a Tour",
-        "url": ""
-      },
-      {
         "title": "Vacation Rentals",
         "desc": "Find the perfect vacation rental for your next getaway with all the comforts of home.",
         "icon": "/about/home_emoji.webp",
         "info": "Vacation Rentals",
-        "url": ""
+        "url": "/Vacation-rentals"
       },
       {
-        "title": "ATV Rentals",
-        "desc": "Rent ATVs for thrilling off-road adventures in the most scenic locations.",
-        "icon": "/about/atv_emoji.webp",
-        "info": "Book an ATV",
-        "url": ""
+        "title": "Tours",
+        "desc": "Discover amazing tours to explore stunning destinations with expert guides.",
+        "icon": "/about/tours_emoji.webp",
+        "info": "Book a Tour",
+        "url": "/Tours"
       },
       {
         "title": "Shared Shuttles",
         "desc": "Affordable shared shuttle services to get you where you need to go.",
         "icon": "/about/sharedShuttle_emoji.webp",
         "info": "Book a Shuttle",
-        "url": ""
+        "url": "/Shuttles?type=Shared#shuttles"
       },
       {
         "title": "Private Shuttles",
         "desc": "Enjoy the convenience and privacy of a dedicated shuttle for your group.",
         "icon": "/about/privateShuttle_emoji.webp",
         "info": "Book a Private Shuttle",
-        "url": ""
+        "url": "/Shuttles?type=Private#shuttles"
+      },
+      {
+        "title": "ATV Rentals",
+        "desc": "Rent ATVs for thrilling off-road adventures in the most scenic locations.",
+        "icon": "/about/atv_emoji.webp",
+        "info": "Book an ATV",
+        "url": "/Rentals/ATV"
       },
       {
         "title": "Golf Cart Rentals",
         "desc": "Explore local areas with ease by renting a golf cart for your trip.",
         "icon": "/about/golfCart_emoji.webp",
         "info": "Book a Golf Cart",
-        "url": ""
+        "url": "Rentals/Golf-cart"
       },
       {
         "title": "Side by side Rentals",
         "desc": "Explore Nosara's rugged trails with our side-by-side.",
         "icon": "/about/utv_emoji.webp",
         "info": "Book a side by side",
-        "url": ""
+        "url": "/Rentals/Side-by-side"
       },
       {
         "title": "Restaurants Reservations",
         "desc": "Reserve a table at the best local restaurants for a delightful dining experience.",
         "icon": "/about/restaurant_emoji.webp",
         "info": "Make a Reservation",
-        "url": ""
+        "url": "/Contact"
       }
     ]
   },

@@ -26,56 +26,56 @@
         "label":"Hours",
         "count": 3,
         "img": "/home/Liberia.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-LIR"
       },
       {
         "name": "San José",
         "label":"Hours",
         "count": 6,
         "img": "/home/SanJose.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-SJO"
       },
       {
         "name": "Flamingo",
         "label":"Hours",
         "count": 3,
         "img": "/home/Flamingo.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-Flamingo"
       },
       {
         "name": "Tamarindo",
         "label":"Hours",
         "count": 3,
         "img": "/home/Tamarindo.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-Tamarindo"
       },
       {
         "name": "Monteverde",
         "label":"Hours",
         "count": 4,
         "img": "/home/Monteverde.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-Monteverde"
       },
       {
         "name": "Jacó",
         "label":"Hours",
         "count": 4,
         "img": "/home/Jacó.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-Jacó"
       },
       {
         "name": "La Fortuna",
         "label":"Hours",
         "count": 4,
         "img": "/home/Fortuna.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-La_Fortuna"
       },
       {
         "name": "Samara",
         "label":"Hours",
         "count": 1,
         "img": "/home/Samara.webp",
-        "url": "/"
+        "url": "/Shuttles/Private/Nosara-Samara"
       }
     ]
   },

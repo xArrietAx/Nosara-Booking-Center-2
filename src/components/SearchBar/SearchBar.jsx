@@ -1,20 +1,20 @@
 "use client"
 
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/Tabs";
+import useCreateQueryString from "@/hooks/useCreateQueryString";
 import { BookingContext } from "@/context/BookingContext";
 import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { SideBySide } from "./SideBySide";
 import { GolfCart } from "./GolfCart";
+import { Content } from "./Content";
 import { Shuttle } from "./Shuttle";
 import Link from "next/link";
 import { ATV } from "./Atv";
-import { SideBySide } from "./SideBySide";
-import useCreateQueryString from "@/hooks/useCreateQueryString";
-import { Content } from "./Content";
 
 export function SearchBar() {
 
-  const { data, updateData, reset, errors } = useContext(BookingContext)
+  const { data, updateData, reset } = useContext(BookingContext)
   const { push } = useRouter()
   const { createQueryString } = useCreateQueryString()
 
@@ -50,10 +50,12 @@ export function SearchBar() {
 
   if(tab === "Shuttle") {
     const { pickUpLocation, dropOffLocation, pickUp: date, adults, children } = data
-    return createQueryString({ pickUpLocation, dropOffLocation, date, adults, children }, null, "Shuttles", "shuttles")
+    createQueryString({ pickUpLocation, dropOffLocation, date, adults, children }, null, "Shuttles", "shuttles")
+  } else {
+    push(`/Rentals/${tab}`)
   }
-  
-  push(`/Rentals/${tab}`)
+
+  reset()
   }
 
   return (

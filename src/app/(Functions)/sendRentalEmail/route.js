@@ -41,7 +41,7 @@ export async function POST(req) {
     await transport.sendMail(
       {
         from: {
-          name:body.Name,
+          name:body.name,
           address: process.env.EMAIL_USER
         },
         to: process.env.EMAIL_USER,

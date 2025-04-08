@@ -10,7 +10,7 @@ export function Shuttles({ data, page, limit, count, totalPages, sortBy }) {
       <div className="grid gap-5 md:grid-cols-2">
         {
           data.length === 0 ? <p>No shuttles found</p> : data.map(item => {
-            return <ShuttleCard key={item.name} data={item} />
+            return <ShuttleCard key={item.id} data={item} />
           })
         }
       </div>

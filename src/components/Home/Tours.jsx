@@ -9,18 +9,20 @@ export async function Tours({ searchParams }) {
   const { category = "", location = "", sortBy = "" } = await searchParams;
 
   const supabase = await createClient();
-  let query = supabase.from("Tours").select("*, category").limit(6);
+  let query = supabase.from("Tours").select("*").limit(6);
   
   if (category) {
-    query = query.eq("category->>category", category)
+    query = query.eq("activity", category)
   }
   
   if (location) {
-    query = query.eq("location", location);
+    const locationArray = location.split(",");
+    const filterString = locationArray.map(loc => `location->>place.ilike.${loc}%`).join(',');
+    query = query.or(filterString);
   }
-  
+
   if (sortBy === "priceAsc") {
-    query = query.order("from_price", { ascending: true });
+    query = query.order("price->from", { ascending: true });
   }
   
   if (sortBy === "nameAsc") {

@@ -9,7 +9,7 @@ export async function Stays() {
 
   const supabase = await createClient();
 
-  let { data: houses, error } = await supabase.from("House").select("*");
+  let { data: houses, error } = await supabase.from("Houses").select("*");
 
   return (
     <section className="section-space py-24 bg-sectionBg">
@@ -21,7 +21,7 @@ export async function Stays() {
             desc={content.stays.desc}
             classNameTitle="heading-2"
           />
-          <Button as={Link} href="Vacation_rentals" >
+          <Button as={Link} href="Vacation-rentals" >
             View More <i className="icon-[ion--arrow-forward] size-5" />
           </Button>
         </div>

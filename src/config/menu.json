@@ -36,7 +36,7 @@
     },
     {
       "name": "Vacation rentals",
-      "url": "/Vacation_rentals"
+      "url": "/Vacation-rentals"
     },
     {
       "name": "Tours",
@@ -53,23 +53,23 @@
           "children": [
             {
               "name": "LIR - Nosara",
-              "url": "/Shuttles/LIR-Nosara"
+              "url": "/Shuttles/Shared/LIR-Nosara"
             },
             {
-              "name": "Nosara - Tamarindo",
-              "url": "/Shuttles/Nosara-Tamarindo"
+              "name": "Nosara - LIR",
+              "url": "/Shuttles/Shared/Nosara-LIR"
             },
             {
-              "name": "Samara - LIR",
-              "url": "/Shuttles/Samara-LIR"
+              "name": "Nosara - SJO",
+              "url": "/Shuttles/Shared/Nosara-SJO"
             },
             {
-              "name": "Monteverde - Nosara",
-              "url": "/Shuttles/Monteverde-Nosara"
+              "name": "SJO - Nosara",
+              "url": "/Shuttles/Shared/SJO-Nosara"
             },
             {
-              "name": "San José - Nosara",
-              "url": "/Shuttles/SJO-Nosara"
+              "name": "Nosara - Samara",
+              "url": "/Shuttles/Shared/Nosara-Samara"
             }
           ]
         },
@@ -79,15 +79,15 @@
           "children": [
             {
               "name": "LIR - Nosara",
-              "url": "/Shuttles/LIR-Nosara"
+              "url": "/Shuttles/Private/LIR-Nosara"
             },
             {
-              "name": "Samara - San José",
-              "url": "/Shuttles/Samara-SJO"
+              "name": "Nosara - LIR",
+              "url": "/Shuttles/Private/Nosara-LIR"
             },
             {
-              "name": "San José - Nosara",
-              "url": "/Shuttles/SJO-Nosara"
+              "name": "Nosara - SJO",
+              "url": "/Shuttles/Private/Nosara-SJO"
             }
           ]
         }
@@ -140,15 +140,15 @@
       "children": [
         {
           "name": "Vacation rentals",
-          "url": "/Vacation_rentals"
+          "url": "/Vacation-rentals"
         },
         {
           "name": "Tours",
           "url": "/Tours"
         },
         {
-          "name": "Shuttle",
-          "url": "/Shuttle"
+          "name": "Shuttles",
+          "url": "/Shuttles"
         }
       ]
     },

@@ -1,6 +1,6 @@
 "use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/Accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
 import useCreateQueryString from "@/hooks/useCreateQueryString";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/Button";
@@ -17,12 +17,12 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
   const currentDistance = searchParams.get("distance") ? searchParams.get("distance").split(",") : [];
   const priceRangeParam = searchParams.get("priceRange") ? searchParams.get("priceRange") : ""
 
-  const [range, setRange] = useState({ min: 500, max: 750 });
+  const [range, setRange] = useState({ min: 520, max: 1000 });
 
   useEffect(() => {
 
     if (!priceRangeParam) {
-      setRange({ min: 500, max: 750 });
+      setRange({ min: 520, max: 1000 });
     }
   
     if (priceRangeParam) {
@@ -77,19 +77,15 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
   return (
     <aside className="lg:w-[30%] xl:w-[25%]">
       <div className="space-y-8 p-7 border border-border rounded-2xl">
-        <Accordion type="multiple" collapsible className="space-y-12">
-          <AccordionItem open={true} value="price" className="pb-8 border-b border-border" >
-            <AccordionTrigger
-              icon={(isOpen) => (
-                <i
-                  className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${
-                    !isOpen ? "rotate-180" : ""
-                  }`}
-                />
-              )}
-              className="flex items-center justify-between w-full text-lg-bold"
-            >
-              Filter Price
+        <Accordion type="multiple" defaultOpen={["price","type","demand","duration","distance"]} collapsible className="space-y-12">
+          <AccordionItem value="price" className="pb-8 border-b border-border" >
+            <AccordionTrigger className="flex items-center justify-between w-full text-lg-bold" >
+              {(isOpen) => {
+                return <>
+                Filter Price
+                <i className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${ !isOpen ?"rotate-180" : "" }`} />
+                </>
+              }}
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-8 mt-5">
@@ -98,7 +94,7 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
   type="range"
   name="min"
   min="0"
-  max={range.max} 
+  max={range.max - 1}
   value={range.min}
   onChange={handleRangeChange}
   className="w-full"
@@ -106,8 +102,8 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
 <input
   type="range"
   name="max"
-  min={range.min} 
-  max="1000"
+  min={range.min + 1}
+  max="2000"
   value={range.max}
   onChange={handleRangeChange}
   className="w-full"
@@ -123,18 +119,14 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem open={true} value="type" className="pb-8 border-b border-border" >
-            <AccordionTrigger
-              icon={(isOpen) => (
-                <i
-                  className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${
-                    !isOpen ? "rotate-180" : ""
-                  }`}
-                />
-              )}
-              className="flex items-center justify-between w-full text-lg-bold"
-            >
-              By Type
+          <AccordionItem value="type" className="pb-8 border-b border-border" >
+            <AccordionTrigger className="flex items-center justify-between w-full text-lg-bold">
+            {(isOpen) => {
+                return <>
+                By Type
+                <i className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${ !isOpen ?"rotate-180" : "" }`} />
+                </>
+              }}
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 mt-5">
@@ -158,18 +150,19 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem open={true} value="demand" className="pb-8 border-b border-border" >
-            <AccordionTrigger
-              icon={(isOpen) => (
+          <AccordionItem value="demand" className="pb-8 border-b border-border" >
+            <AccordionTrigger className="flex items-center justify-between w-full text-lg-bold" >
+              {(isOpen) => {
+                return <>
+                By Demand
                 <i
                   className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${
                     !isOpen ? "rotate-180" : ""
                   }`}
                 />
-              )}
-              className="flex items-center justify-between w-full text-lg-bold"
-            >
-              By Demand
+                </>
+              }}
+              
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 mt-5">
@@ -193,18 +186,18 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem open={true} value="duration" className="pb-8 border-b border-border" >
-            <AccordionTrigger
-              icon={(isOpen) => (
+          <AccordionItem value="duration" className="pb-8 border-b border-border" >
+            <AccordionTrigger className="flex items-center justify-between w-full text-lg-bold" >
+            {(isOpen) => {
+                return <>
+                By Duration
                 <i
                   className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${
                     !isOpen ? "rotate-180" : ""
                   }`}
                 />
-              )}
-              className="flex items-center justify-between w-full text-lg-bold"
-            >
-              By Duration
+                </>
+              }}
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 mt-5">
@@ -233,18 +226,18 @@ export function Aside({ countsData: { type, duration, demand, distance } }) {
             </AccordionContent>
           </AccordionItem>
 
-          <AccordionItem open={true} value="distance" className="pb-8 border-b border-border" >
-            <AccordionTrigger
-              icon={(isOpen) => (
+          <AccordionItem value="distance" className="pb-8 border-b border-border" >
+            <AccordionTrigger className="flex items-center justify-between w-full text-lg-bold" >
+            {(isOpen) => {
+                return <>
+                By Distance
                 <i
                   className={`icon-[ion--chevron-down] size-4 transition-transform duration-300 ${
                     !isOpen ? "rotate-180" : ""
                   }`}
                 />
-              )}
-              className="flex items-center justify-between w-full text-lg-bold"
-            >
-              By Distance
+                </>
+              }}
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 mt-5">

@@ -99,19 +99,20 @@ const renderMenuItems = (menu) => {
             {item.name}
           </Link>
         ) : (
-          <AccordionTrigger
-            icon={(isOpen) => {
-              return (
+          <AccordionTrigger className="flex items-center justify-between px-3 py-2 rounded-sm transition-colors duration-300 hover:bg-secondary">
+            {
+              (isOpen) => {
+                return <>
+                {item.name}
                 <i
                   className={`icon-[ion--chevron-down] transition-transform duration-300 ${
                     isOpen ? "rotate-180" : ""
                   }`}
                 />
-              );
-            }}
-            className="px-3 py-2 rounded-sm transition-colors duration-300 hover:bg-secondary"
-          >
-            {item.name}
+                </>
+              }
+            }
+            
           </AccordionTrigger>
         )}
         {item.hasChildren && item.children ? (

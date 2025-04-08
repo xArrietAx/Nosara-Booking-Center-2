@@ -1,9 +1,12 @@
-import { Hero } from "@/components/About/Hero";
+import { Breadcrumb } from "@/components/Stateless/BreadCrumb";
+import { WhyChooseUs } from "@/components/About/WhyChooseUs";
 import { Offer } from "@/components/About/Offer";
 import { Video } from "@/components/About/Video";
+import { Hero } from "@/components/About/Hero";
 import { Blog } from "@/components/Home/Blog";
-import { WhyChooseUs } from "@/components/About/WhyChooseUs";
-import { Breadcrumb } from "@/components/Stateless/BreadCrumb";
+import metadataAbout from "@/SEO/about";
+
+export const metadata = metadataAbout
 
 export default function About() {
   return (

@@ -62,7 +62,7 @@ export function WhyChooseUs({ Tag = "h5" }) {
               {content.whyChooseUs.benefits.map((item, i) => {
                 return (
                   <li key={i} className="flex gap-3">
-                    <i className="icon-[game-icons--check-mark] text-green-500 size-8" />
+                    <i className="icon-[game-icons--check-mark] flex-none text-green-500 size-8" />
                     <div className="space-y-2">
                       <h3 className="text-xl-bold">{item.title}</h3>
                       <p className="text-md-medium text-text">{item.desc}</p>

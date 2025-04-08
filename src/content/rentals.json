@@ -81,5 +81,20 @@
     "details":["Engine: 4-stroke and 1 cylinder", "Transmission: Automatic", "Fuel capacity: 40 liters", "Displacement: 650cc", "Seats: 6", "Brand: can - am"]
   }
 ]
-  }
+  },
+
+  "FAQs": [
+    {
+      "title":"Do I need a valid driver's license to rent a vehicle?",
+      "desc":"Yes, a valid driver's license is required to rent an ATV. You will need to present it for verification before your rental is confirmed."
+    },
+    {
+      "title":"Will I receive exactly the vehicle I expect, or could it be a different one?",
+      "desc":"If no specific model is requested, you may receive any available vehicle of the same type. Vehicle models and sizes may vary based on availability at the time of rental."
+    },
+    {
+      "title":"Is a security deposit required for rentals?",
+      "desc":"A security deposit may be required depending on the vehicle and rental conditions."
+    }
+  ]
 }

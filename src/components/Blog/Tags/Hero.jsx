@@ -32,7 +32,7 @@ export async function Hero({ searchParams }) {
           {tags.map((item, i) => {
             return (
               <div key={i} className="flex flex-col gap-6 p-4 border border-border rounded-sm transition-shadow duration-300 hover:shadow-card" >
-                <Link className="link text-lg-bold" href={item.url}>
+                <Link className="link text-lg-bold" href={item.url.replace(/ /g, "-")}>
                   {item.name}
                 </Link>
                 <div className="flex items-center justify-between gap-5">
@@ -44,7 +44,7 @@ export async function Hero({ searchParams }) {
                   </div>
                   <Button
                     as={Link}
-                    href={item.url}
+                    href={item.url.replace(/ /g, "-")}
                     isIconOnly
                     variant="secondary"
                     hover="primary"

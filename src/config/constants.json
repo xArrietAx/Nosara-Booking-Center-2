@@ -1,6 +1,6 @@
 {
   "toursFilter": {
-    "categories": ["", "ATV", "Sea Adventure", "Canopy"],
+    "activities": ["", "Off road", "Sea Adventure", "Canopy"],
     "locations": ["", "Garza", "Nosara", "Camaronal"],
     "sortOptions": [
       { "label": "", "value": "" },

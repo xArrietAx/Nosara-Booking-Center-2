@@ -5,9 +5,36 @@ import { Breadcrumb } from "@/components/Stateless/BreadCrumb";
 import { getPost } from "@/utils/blog/getPost";
 import { CustomMDX } from "@/utils/MDX/mdx";
 import { notFound } from "next/navigation";
+import { getPosts } from "@/utils/blog/getPosts";
 
-export default async function BlogPost(params) {
-  const { slug } = await params.params;
+export async function generateStaticParams() {
+
+  const { posts } = await getPosts()
+ 
+  return posts.map(post => ({
+    slug: post.slug
+  }))
+}
+
+export async function generateMetadata({ params }) {
+
+  let { slug } = await params;
+
+  const post = await getPost(slug);
+
+  return {
+    title: post.metadata.title,
+    description: post.metadata.desc,
+    alternates: {
+      canonical: `/Blog/${slug}`,
+    },
+  };
+}
+
+
+export default async function BlogPost({ params }) {
+  
+  const { slug } = await params;
 
   const post = await getPost(slug);
   

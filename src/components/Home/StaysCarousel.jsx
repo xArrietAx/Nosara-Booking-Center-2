@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import { StayCard } from "../ui/Cards/StayCard";
+import { HouseCard } from "../ui/Cards/HouseCard";
 
 export function StayCarousel({ stays }) {
 
@@ -31,7 +31,7 @@ export function StayCarousel({ stays }) {
       {stays.map((item, i) => {
         return (
           <SwiperSlide key={i}>
-            <StayCard data={item} />
+            <HouseCard data={item} />
           </SwiperSlide>
         );
       })}

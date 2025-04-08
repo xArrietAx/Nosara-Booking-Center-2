@@ -29,12 +29,26 @@ export function DatePicker({
   classNameWrapper,
   leftSide,
   rightSide,
+  required = true
 }) {
   const today = new Date();
   const [currentMonth, setCurrentMonth] = useState(today);
   const [isOpen, setIsOpen] = useState(false);
   const datePickerRef = useRef(null);
   const inputRef = useRef(null);
+
+  const handleOpen = () => {
+    setIsOpen((prev) => !prev);
+    if (window.innerWidth < 768) {
+      document.documentElement.style.overflow = "hidden";
+    }
+  };
+  
+  const handleClose = () => {
+    setIsOpen(false);
+    document.documentElement.style.overflow = "";
+  };
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,13 +58,13 @@ export function DatePicker({
         inputRef.current &&
         !inputRef.current.contains(event.target)
       ) {
-        setIsOpen(false);
+        handleClose()
       }
     };
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        handleClose()
       }
     };
 
@@ -85,31 +99,31 @@ export function DatePicker({
   const allDays = [...prevMonthDays, ...daysInMonth, ...nextMonthDays];
 
   return (
-    <div>
+    <div className="relative">
       <div
-        className={`cursor-pointer ${classNameWrapper}`}
-        onClick={() => setIsOpen(!isOpen)}
+        className={`relative cursor-pointer ${classNameWrapper}`}
+        onClick={handleOpen}
         ref={inputRef}
       >
         {leftSide}
         <input
           type="text"
           placeholder={placeholder}
-          required
-          className={className}
-          value={selected ? format(selected, "dd/MM/yyyy") : ""}
+          required={required}
+          className={`max-w-24 ${className}`}
+          value={selected ? format(selected, "MM/dd/yyyy") : ""}
           onChange={() => {}}
           inputMode="none"
         />
+        <div className="absolute left-5 z-50 w-48 h-10" />
         {rightSide}
       </div>
 
       <AnimatePresence>
         {isOpen && (
           <>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: isOpen ? 1 : 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="fixed inset-0 z-40 bg-primary/50 md:hidden" onClick={() => setIsOpen(false)} />
-          <div className="fixed top-0 left-0 z-[9999999] flex items-center justify-center w-screen h-screen md:relative md:w-72 md:h-0">
-            <div className="absolute w-full max-w-96 px-5 md:top-full md:p-0 md:mt-1" ref={datePickerRef} >
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: isOpen ? 1 : 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="fixed inset-0 z-40 bg-primary/50 md:hidden" onClick={handleClose} />
+            <div className="fixed top-[50%] left-[50%] z-50 min-w-[18.5rem] translate-x-[-50%] translate-y-[-50%] md:absolute md:top-full md:left-0 md:p-0 md:mt-1" ref={datePickerRef} >
               <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="p-3 border border-border rounded-lg bg-white shadow-2xl" >
                 <div className="flex justify-between mt-2 mb-[18px]">
                   <button
@@ -156,9 +170,9 @@ export function DatePicker({
                         type="button"
                         key={day.toString()}
                         onClick={() => {
-                          if (!isDisabled) {
+                          if (!isDisabled) {     
                             onChange(day);
-                            setIsOpen(false);
+                            handleClose()
                             if (isOutsideMonth) {
                               setCurrentMonth(startOfMonth(day));
                             }
@@ -186,7 +200,6 @@ export function DatePicker({
                 </div>
               </motion.div>
             </div>
-          </div>
           </>
         )}
       </AnimatePresence>

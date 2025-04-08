@@ -1,7 +1,23 @@
 {
   "hero": {
-    "title": "Journey with Travila - Begin Your Story!",
-    "desc": "Easily search for top shuttles offered by our professional network",
+    "title": "Book Nosara Transfers with NBC – Safe & Fast!",
+    "desc": "Fast, safe transfers to and from Nosara. Book with NBC now!",
     "bgImg": "/shuttles/banner.webp"
-  }
+  },
+  "FAQs": [
+
+    {
+      "title": "How far in advance should I book my transfer?",
+      "content": "We recommend booking at least 24 hours in advance to ensure availability."
+    },
+    {
+      "title": "Can I make a last-minute booking?",
+      "content": "Yes, but it is subject to availability. Please contact us as soon as possible."
+    },
+    {
+      "title": "Do you accept card payments?",
+      "content": "Yes, we accept credit/debit card payments, paypal, bank transfers, and cash."
+    }
+  ]
+
 }

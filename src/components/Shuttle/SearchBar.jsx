@@ -13,10 +13,10 @@ export function SearchBar() {
     const { createQueryString } = useCreateQueryString()
 
     function handleSubmit(e) {
-        e.preventDefault()
-        const { pickUpLocation, dropOffLocation, pickUp: date, adults, children } = data
-        createQueryString({ pickUpLocation, dropOffLocation, date, adults, children, page: ""})
-        reset()
+      e.preventDefault()
+      const { pickUpLocation, dropOffLocation } = data
+      createQueryString({ pickUpLocation, dropOffLocation, page: ""})
+      reset()
     }
 
     return <Content handleSubmit={handleSubmit}>

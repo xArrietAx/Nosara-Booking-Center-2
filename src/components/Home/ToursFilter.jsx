@@ -25,13 +25,13 @@ export function ToursFilter() {
             hover="outline"
             className="font-medium"
           >
-            Categories <i className="icon-[ion--chevron-down]" /> 
+            Activities <i className="icon-[ion--chevron-down]" /> 
           </Button>
         </PopoverTrigger>
         <PopoverContent className="min-w-36 mt-1">
           {({ close }) => (
             <ul>
-              {constants.toursFilter.categories.map((item) => (
+              {constants.toursFilter.activities.map((item) => (
                 <li
                   key={item}
                   className="px-3 py-2 rounded-sm text-start whitespace-nowrap transition-colors duration-300 cursor-pointer hover:bg-secondary"

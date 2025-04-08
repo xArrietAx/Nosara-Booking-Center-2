@@ -1,8 +1,8 @@
 "use client";
 
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/Popover";
 import useCreateQueryString from "@/hooks/useCreateQueryString";
-import { Button } from "../ui/Button";
+import { Button } from "@/components/ui/Button";
+import { Select } from "@/components/ui/Select";
 
 const sort = ["name", "price", "duration"];
 const show = ["5", "10", "15"];
@@ -19,7 +19,7 @@ export function Header({ page, limit, count, sortBy }) {
       if (parseInt(value) === limit) return;
       updates["page"] = null;
     }
-    createQueryString(updates, null, "shuttles");
+    createQueryString(updates, null, "Shuttles", "shuttles");
     close();
   }
 
@@ -36,6 +36,7 @@ export function Header({ page, limit, count, sortBy }) {
         </p>
       </div>
 
+
       <div className="flex items-center gap-3">
         <Button
           variant="ghost"
@@ -50,40 +51,31 @@ export function Header({ page, limit, count, sortBy }) {
           <span className="hidden mx-2 text-xs-medium text-text xs:inline">
             Show
           </span>
-          <Popover clickOutside>
-            <PopoverTrigger className="flex items-center gap-1">
-              {limit} <i className="icon-[ion--chevron-down]" />
-            </PopoverTrigger>
-            <PopoverContent className="min-w-fit rounded-none! p-0!">
-              {({ close }) => (
-                <ul>
-                  {show.map((item) => {
-                    return (
-                      <li
-                        key={item}
-                        className="py-1 pr-4 pl-2 transition-colors duration-300 cursor-pointer hover:bg-secondary"
-                        onClick={() => handleQuery("limit", item, close)}
-                      >
-                        {item}
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </PopoverContent>
-          </Popover>
+          <Select value={limit} triggerClassName="flex items-center gap-1" inputClassName="field-sizing-content capitalize" iconTwoClassName="icon-[ion--chevron-down] flex-none" className="w-10!">
+          {({ close }) => {
+            return <ul>
+            {show.map((item) => {
+              return (
+                <li
+                  key={item}
+                  className="py-1 pr-4 pl-2 transition-colors duration-300 cursor-pointer hover:bg-secondary"
+                  onClick={() => handleQuery("limit", item, close)}
+                >
+                  {item}
+                </li>
+              );
+            })}
+          </ul>
+          }}
+          </Select>
         </div>
 
         <div className="flex items-center p-[7px] border border-border rounded">
           <span className="hidden mx-2 text-xs-medium text-text xs:inline">
             Sort by:
           </span>
-          <Popover clickOutside>
-            <PopoverTrigger className="flex items-center gap-1 capitalize">
-              {sortBy} <i className="icon-[ion--chevron-down]" />
-            </PopoverTrigger>
-            <PopoverContent className="min-w-fit rounded-none! p-0!">
-              {({ close }) => (
+          <Select value={sortBy} triggerClassName="flex items-center gap-1" inputClassName="field-sizing-content capitalize" iconTwoClassName="icon-[ion--chevron-down] flex-none" className="w-[5.2rem]!" >
+          {({ close }) => (
                 <ul>
                   {sort.map((item) => {
                     return (
@@ -98,8 +90,7 @@ export function Header({ page, limit, count, sortBy }) {
                   })}
                 </ul>
               )}
-            </PopoverContent>
-          </Popover>
+          </Select>
         </div>
       </div>
     </div>

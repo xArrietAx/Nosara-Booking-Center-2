@@ -1,98 +1,74 @@
-"use client";
-
-import { cloneElement, Children, createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 import { motion } from "framer-motion";
 
 const AccordionContext = createContext();
 
-const Accordion = ({ type = "single", as: Tag = "div", collapsible = false, children, className }) => {
-  const [openItems, setOpenItems] = useState([]);
-
-  useEffect(() => {
-    const defaultOpen = Children.map(children, (child) => {
-      if (child.props.open) {
-        return child.props.value;
-      }
-      return null;
-    }).filter(Boolean);
-
-    setOpenItems(type === "single" ? [defaultOpen[0]] : defaultOpen);
-  }, [children, type]);
+export function Accordion({ type = "single", defaultOpen = [], children, className = "" }) {
+  const [openIndexes, setOpenIndexes] = useState(new Set(defaultOpen));
 
   const toggleItem = (value) => {
-    setOpenItems((prev) => {
-      if (type === "single") {
-        if (prev.includes(value)) {
-          return collapsible ? [] : prev;
-        }
-        return [value];
-      }
+    setOpenIndexes((prev) => {
+      let newSet = new Set(prev);
       if (type === "multiple") {
-        return prev.includes(value)
-          ? prev.filter((item) => item !== value)
-          : [...prev, value];
+        newSet.has(value) ? newSet.delete(value) : newSet.add(value);
+      } else {
+        newSet = newSet.has(value) ? new Set() : new Set([value]);
       }
-      return prev;
+      return newSet;
     });
   };
 
   return (
-    <AccordionContext.Provider value={{ openItems, toggleItem }}>
-      <Tag className={className}>{children}</Tag>
+    <AccordionContext.Provider value={{ openIndexes, toggleItem }}>
+      <div className={className}>
+        {children}
+      </div>
     </AccordionContext.Provider>
   );
-};
+}
 
-const AccordionItem = ({ value, as: Tag = "div", open = false, children, className }) => {
-  const { openItems, toggleItem } = useContext(AccordionContext);
-  const isOpen = openItems.includes(value);
-
-  return (
-    <Tag className={className}>
-      {Children.map(children, (child) => {
-        if (child.type === AccordionTrigger) {
-          return cloneElement(child, { isOpen, onClick: () => toggleItem(value) });
-        }
-        if (child.type === AccordionContent) {
-          return cloneElement(child, { isOpen });
-        }
-        return child;
-      })}
-    </Tag>
-  );
-};
-
-const AccordionTrigger = ({
-  children,
-  isOpen,
-  onClick,
-  className,
-  icon,
-  as = "button",
-}) => {
-  const Trigger = as;
+export function AccordionItem({ value, children, className }) {
+  const { openIndexes, toggleItem } = useContext(AccordionContext);
+  const isOpen = openIndexes.has(value);
 
   return (
-    <Trigger onClick={onClick} className={`${className} flex items-center justify-between cursor-pointer`} >
-      {typeof children === "function" ? children(isOpen) : children}
-      {typeof icon === "function" ? icon(isOpen) : icon}
-    </Trigger>
+    <div className={className}>
+      {/* Pasamos el value al contexto de cada AccordionItem */}
+      <AccordionItemContext.Provider value={{ value, isOpen, toggleItem }}>
+        {children}
+      </AccordionItemContext.Provider>
+    </div>
   );
-};
+}
 
-const AccordionContent = ({ children, isOpen }) => (
-  <motion.div
-    initial={{ height: 0, opacity: 0 }}
-    animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-    exit={{ height: 0, opacity: 0 }}
-    transition={{ duration: 0.3 }}
-    style={{
-      overflow: "hidden",
-      borderTop: "none",
-    }}
-  >
-    {typeof children === "function" ? children(isOpen) : children}
-  </motion.div>
-);
+// Contexto específico para AccordionItem
+const AccordionItemContext = createContext();
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export function AccordionTrigger({ children, className }) {
+  const { value, toggleItem, isOpen } = useContext(AccordionItemContext);
+
+  return (
+    <button
+      className={className}
+      onClick={() => toggleItem(value)}
+    >
+      {typeof children === "function" ? children(isOpen) : children }
+    </button>
+  );
+}
+
+export function AccordionContent({ children, className }) {
+  const { isOpen } = useContext(AccordionItemContext);
+
+  return (
+    <motion.div
+      initial={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+      animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="overflow-hidden"
+    >
+      <div className={className}>{children}</div>
+    </motion.div>
+  );
+}

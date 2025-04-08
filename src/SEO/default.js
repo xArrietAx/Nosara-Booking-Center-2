@@ -1,13 +1,16 @@
 const title = "Discover Nosara: Vacation rentals, Tours, and Rentals"
 
-const description = "We specialize in vacation rentals, tours, shuttles, and rentals like ATV, cars and golf carts in Nosara."
+const description = "We specialize in vacation rentals, tours, shuttles, and rentals like ATV, side by side and golf carts in Nosara."
 
 const url = "https://www.nosarabookingcenter.com"
 
 const metadataDefault = {
   metadataBase: new URL(url),
 
-  title,
+  title: {
+    template: '%s | Nosara Booking Center',
+    default: title
+  },
   description,
 
   alternates: {
@@ -47,7 +50,7 @@ const metadataDefault = {
   siteName: "Nosara Booking Center",
   creator: "Andrés Arrieta",
   url: url,
-  category: "Real state",
+  category: "Concierge Service",
 };
 
-export { metadataDefault };
+export default metadataDefault

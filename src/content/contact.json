@@ -65,23 +65,23 @@
     "faqs":[
       {
         "title":"What is Nosara Booking Center?",
-        "desc":"We are a concierge service specialized in providing you with personalized experiences. We facilitate the booking of tours, vacation home rentals, vehicles such as carts, golf carts, ATVs, and much more. Our goal is to make your trip unforgettable and hassle-free."
+        "content":"We are a concierge service specialized in providing you with personalized experiences. We facilitate the booking of tours, vacation home rentals, vehicles such as carts, golf carts, ATVs, and much more. Our goal is to make your trip unforgettable and hassle-free."
       },
       {
         "title":"Are prices the same with you and the provider?",
-        "desc":"Yes, the prices are exactly the same. We earn a percentage from the provider’s set price, with no extra cost to you."
+        "content":"Yes, the prices are exactly the same. We earn a percentage from the provider’s set price, with no extra cost to you."
       },
       {
         "title":"Are the concierge services free of charge?",
-        "desc":"Yes, our concierge services are completely free of charge. You only pay for the services or activities you book, with no additional fees. We earn a percentage from the provider's set price, ensuring transparency and no extra cost to you."
+        "content":"Yes, our concierge services are completely free of charge. You only pay for the services or activities you book, with no additional fees. We earn a percentage from the provider's set price, ensuring transparency and no extra cost to you."
       },
       {
         "title":"How do you ensure service quality?",
-        "desc":"We only work with high quality and reliable suppliers, and we constantly verify that all of our services meet the standards we promise."
+        "content":"We only work with high quality and reliable suppliers, and we constantly verify that all of our services meet the standards we promise."
       },
       {
         "title":"How far in advance should I make a booking?",
-        "desc":"We recommend that you make your reservation as far in advance as possible to ensure the availability of the services you desire. However, we also try to accommodate last minute reservations whenever possible."
+        "content":"We recommend that you make your reservation as far in advance as possible to ensure the availability of the services you desire. However, we also try to accommodate last minute reservations whenever possible."
       }
     ]
   }

@@ -63,7 +63,7 @@ export function Form() {
 
     <div className="relative flex flex-col gap-2 w-full">
       <label htmlFor="subject" className="text-sm-medium">Subject</label>
-      <input required name="subject" id="subject" type="tel" placeholder="Inquiry about" className="p-4 pl-11 border border-border rounded-lg outline-hidden" />
+      <input required name="subject" id="subject" type="text" placeholder="Inquiry about" className="p-4 pl-11 border border-border rounded-lg outline-hidden" />
       <i className="icon-[mage--pin] absolute top-12 left-3 size-5" />
     </div>
 

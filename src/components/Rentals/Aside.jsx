@@ -1,9 +1,9 @@
-import { Form } from "./Form/Form";
+import { Form } from "@/components/Rentals/Form";
 
-export function Aside({ slug }) {
+export function Aside({ rent }) {
   return (
     <div className="lg:w-2/6">
-      <Form slug={decodeURIComponent(slug)} />
+      <Form rent={rent} />
     </div>
   );
 }

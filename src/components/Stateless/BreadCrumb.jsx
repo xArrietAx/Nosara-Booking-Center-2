@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export function Breadcrumb() {
+export function Breadcrumb({ noLink }) {
   const pathname = usePathname();
   const pathArray = pathname.split("/").filter((path) => path);
 
@@ -11,23 +11,28 @@ export function Breadcrumb() {
     <section className="py-7 border-t border-border bg-sectionBg">
       <ol className="container flex items-center gap-3 font-medium text-sm text-text">
         <li>
-          <Link href="/"className="link-reverse">Home</Link>
+          <Link href="/" className="link-reverse font-semibold">Home</Link>
         </li>
         {pathArray.map((path, index) => {
           const href = "/" + pathArray.slice(0, index + 1).join("/");
           const isLast = index === pathArray.length - 1;
+          const decodedPath = decodeURIComponent(path.replace(/-/g, pathArray[0] === "Shuttles" ? " to " : " ").replace(/_/g, " "));
+
+          // 🔹 Si `path` está en `noLink.names` y el índice coincide, no debe ser link
+          const shouldBeLink = !(noLink?.names.includes(path) && noLink?.number === index);
 
           return (
             <li key={href} className="flex items-center gap-3">
               <span className="text-lg">/</span>
-              {isLast ? (
-                <span className="text-black font-bold line-clamp-1" >
-                  {decodeURIComponent(path.replace(/-/g, " "))}
+              {isLast || !shouldBeLink ? (
+                <span className={`font-semibold line-clamp-1 ${!shouldBeLink ? "" : "text-black" }`}>
+                  {decodedPath}
                 </span>
-              ) : ( pathArray[0] === "Rentals" ? <span>{decodeURIComponent(path.replace(/-/g, " "))}</span> : 
-                <Link href={href} className="link-reverse">
-                  {decodeURIComponent(path.replace(/-/g, " "))}
-                </Link> )}
+              ) : (
+                <Link href={href} className="link-reverse font-semibold ">
+                  {decodedPath}
+                </Link>
+              )}
             </li>
           );
         })}

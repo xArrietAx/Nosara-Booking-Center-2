@@ -2,7 +2,7 @@ import Image from "next/image";
 import content from "@/content/shuttles.json";
 import { SearchBar } from "./SearchBar";
 
-export function Hero({ pickUp, dropOff, date, guests }) {
+export function Hero() {
   return (
     <section>
       <div className="relative py-32 bg-cover bg-no-repeat bg-center">
@@ -21,7 +21,7 @@ export function Hero({ pickUp, dropOff, date, guests }) {
             <h1 className="heading-3">{content.hero.title}</h1>
             <p className="heading-6 heading-6-medium">{content.hero.desc}</p>
           </div>
-          <SearchBar pickUp={pickUp} dropOff={dropOff} date={date} guests={guests} />
+          <SearchBar />
         </div>
       </div>
     </section>

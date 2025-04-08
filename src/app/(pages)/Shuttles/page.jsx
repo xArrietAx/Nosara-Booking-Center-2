@@ -1,7 +1,10 @@
-import { getFilterCounts } from "@/utils/supabase/getFilterCounts";
+import { getShuttlesFilterCount } from "@/utils/supabase/getShuttlesFilterCount";
 import { Transports } from "@/components/Shuttle/Transports";
 import { createClient } from "@/utils/supabase/server";
 import { Hero } from "@/components/Shuttle/Hero";
+import metadataShuttles from "@/SEO/shuttles";
+
+export const metadata = metadataShuttles
 
 async function fetchShuttles(
   page,
@@ -52,7 +55,7 @@ async function fetchShuttles(
 
   if (priceRange) {
     const [minPrice, maxPrice] = priceRange.split("-").map(Number);
-    query = query.gte("price", minPrice).lte("price", maxPrice);
+    query = query.gte("price->from", minPrice).lte("price->from", maxPrice);
   }
 
   if (pickUpLocation && dropOffLocation) {
@@ -64,7 +67,6 @@ async function fetchShuttles(
   const { data, error, count } = await query;
 
   if (error) {
-    console.error(error);
     throw error;
   }
 
@@ -91,7 +93,7 @@ export default async function Shuttles({ searchParams: params }) {
   const searchParams = await params;
 
   const page = parseInt(searchParams?.page) || 1;
-  const limit = parseInt(searchParams?.limit) || 5;
+  const limit = parseInt(searchParams?.limit) || 6;
   const type = searchParams?.type || "";
   const demand = searchParams?.demand || "";
   const duration = searchParams?.duration || "";
@@ -101,7 +103,7 @@ export default async function Shuttles({ searchParams: params }) {
   const pickUpLocation = searchParams?.pickUpLocation || "";
   const dropOffLocation = searchParams?.dropOffLocation || "";
 
-  const countsData = await getFilterCounts();
+  const countsData = await getShuttlesFilterCount();
 
   const { data, count } = await fetchShuttles(
     page,
