@@ -5,7 +5,9 @@ import content from "@/content/home.json";
 export function Hero() {
     return (
       <section>
-        <div className={`home_banner relative pt-[100px] pb-[190px] text-white`} > 
+        <div className={`after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50 bg-[url(/home/banner.webp)] bg-cover bg-center bg-no-repeat relative pt-[100px] pb-[190px] text-white`} > 
+
+
 
           <div className="container relative z-10 flex flex-col items-center gap-5 text-center">
             <div className="flex items-center justify-center">

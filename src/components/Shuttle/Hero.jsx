@@ -4,7 +4,7 @@ import { SearchBar } from "./SearchBar";
 export function Hero() {
   return (
     <section>
-      <div className="shuttles_banner relative py-32 bg-cover bg-no-repeat bg-center">
+      <div className="after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black/50 bg-[url(/shuttles/banner.webp)] bg-cover bg-center bg-no-repeat relative py-32">
       
         <div className="container relative z-10 flex flex-col items-center gap-14">
           <div className="text-white text-center">
