@@ -38,7 +38,7 @@ export default async function CategoryPage({ params, searchParams }) {
   const category = await getCategory(slug);
   
   if (!category) {
-    return notFound();
+    notFound();
   }
 
   const { posts, totalPages } = await getPostsByCategory(slug, page, postsPerPage);

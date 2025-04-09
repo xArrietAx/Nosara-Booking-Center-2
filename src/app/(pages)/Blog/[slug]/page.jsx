@@ -39,7 +39,7 @@ export default async function BlogPost({ params }) {
   const post = await getPost(slug);
   
   if (!post) {
-    return notFound();
+    notFound();
   }
 
   return (

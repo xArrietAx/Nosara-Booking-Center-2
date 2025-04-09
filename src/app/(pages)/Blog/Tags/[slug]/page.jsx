@@ -32,7 +32,7 @@ export default async function TagPage({ params, searchParams }) {
   const tag = await getTag(slug);
 
   if (!tag) {
-    return notFound();
+    notFound();
   }
 
   const { posts, totalPages } = await getPostsByTag(slug, page, postsPerPage);

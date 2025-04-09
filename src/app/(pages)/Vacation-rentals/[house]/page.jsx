@@ -58,7 +58,7 @@ export default async function HousePage({ params }) {
   const { data } = await fetchHouse(house);
 
   if (!data) {
-    return notFound();
+    notFound();
   }
 
   const {

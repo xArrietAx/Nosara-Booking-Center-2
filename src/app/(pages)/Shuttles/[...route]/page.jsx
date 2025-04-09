@@ -61,7 +61,7 @@ export default async function ShuttleRoute({ params }) {
   const { data } = await fetchShuttle(shuttleType, shuttleRoute);
 
   if (!data) {
-    return notFound();
+    notFound();
   }
 
   const {

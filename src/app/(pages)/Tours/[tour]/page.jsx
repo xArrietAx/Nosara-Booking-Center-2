@@ -58,7 +58,7 @@ export default async function TourPage({ params }) {
   const { data } = await fetchTour(tour);
 
   if (!data) {
-    return notFound();
+    notFound();
   }
 
   const { name, location, title, overview, included, images, price, duration } = data;

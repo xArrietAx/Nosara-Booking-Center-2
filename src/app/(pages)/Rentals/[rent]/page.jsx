@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     case 'Side-by-side': return metadataSideBySide
 
     default:
-      return notFound()
+      notFound()
   }
 }
 
@@ -33,7 +33,7 @@ export default async function Rentals({ params }) {
   const page = content[rent]
 
   if (!page) {
-    return notFound()
+    notFound()
   }
 
   const { title, images, overview: { one, two }, models } = page
