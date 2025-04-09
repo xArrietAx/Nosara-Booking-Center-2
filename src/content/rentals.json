@@ -1,11 +1,11 @@
 {
   "ATV": {
     "title":"Experience the Ultimate Off-Road Adventure in Nosara with Our ATV Rentals!",
-    "images":["/Rentals/ATV_1.webp",
-          "/Rentals/ATV_2.webp",
-          "/Rentals/ATV_3.webp",
-          "/Rentals/ATV_4.webp",
-          "/Rentals/ATV_5.webp"],
+    "images":["/rentals/ATV_1.webp",
+          "/rentals/ATV_2.webp",
+          "/rentals/ATV_3.webp",
+          "/rentals/ATV_4.webp",
+          "/rentals/ATV_5.webp"],
     "overview": {
     "one": "Explore Nosara like never before with our top-of-the-line ATV rentals! Whether you're craving an adrenaline-pumping ride through rugged jungle trails or a scenic coastal cruise, our ATVs are built to handle it all. Ride through dirt roads, cross rivers, and discover hidden gems while experiencing the raw beauty of Costa Rica’s diverse landscapes.",
 
@@ -33,8 +33,8 @@
 
   "Golf-cart": {
     "title":"Cruise Through Nosara in Comfort with Our Premium Golf Cart Rentals!",
-    "images":["/Rentals/GC_1.webp",
-          "/Rentals/GC_2.webp","/Rentals/GC_3.webp", "/Rentals/GC_4.webp","/Rentals/GC_5.webp"],
+    "images":["/rentals/GC_1.webp",
+          "/rentals/GC_2.webp","/rentals/GC_3.webp", "/rentals/GC_4.webp","/rentals/GC_5.webp"],
     "overview": {
     "one": "Discover Nosara in comfort and style with our premium golf cart rentals! Whether you're heading to the beach, exploring the town, or cruising through lush tropical roads, our golf carts provide a smooth and effortless ride. Enjoy the fresh ocean breeze as you navigate Nosara’s charming streets, with the freedom to stop and explore at your own pace. Designed for convenience, our carts are easy to drive and perfect for a relaxed, hassle-free experience.",
     "two": "Ideal for families, couples, or small groups, our golf carts are an eco-friendly and fun way to get around. Skip the traffic and parking struggles while enjoying a more connected experience with the beautiful surroundings. Reserve your golf cart rental today and explore Nosara the easy way!"
@@ -53,11 +53,11 @@
 
   "Side-by-side": {
     "title":"Explore Nosara’s Wild Side with Our Off-Road Side-by-Side Rentals!",
-    "images":["/Rentals/SBS_1.webp",
-          "/Rentals/SBS_2.webp",
-          "/Rentals/SBS_3.webp",
-          "/Rentals/SBS_4.webp",
-          "/Rentals/SBS_5.webp"],
+    "images":["/rentals/SBS_1.webp",
+          "/rentals/SBS_2.webp",
+          "/rentals/SBS_3.webp",
+          "/rentals/SBS_4.webp",
+          "/rentals/SBS_5.webp"],
     "overview": {
     "one": "Take your adventure to the next level with our powerful side-by-side rentals! Designed for performance and comfort, these off-road vehicles are perfect for exploring Nosara’s rugged terrain. Whether you're tackling jungle trails, sandy beaches, or steep hills, our side-by-sides provide the ultimate combination of power and stability. Experience the thrill of off-roading while enjoying breathtaking views and discovering hidden gems along the way.",
 
