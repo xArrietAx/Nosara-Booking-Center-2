@@ -281,6 +281,7 @@ export function Form({ rent }) {
           className="w-full"
           hover="outline"
           name="emailBtn"
+          disabled={isLoading}
         >
           Book Now
         </Button>
@@ -290,6 +291,7 @@ export function Form({ rent }) {
             isIconOnly="lg"
             className="hover:-translate-y-1"
             name="wpBtn"
+            disabled={isLoading}
           >
             <i className="icon-[famicons--logo-whatsapp] size-7" />
           </Button>

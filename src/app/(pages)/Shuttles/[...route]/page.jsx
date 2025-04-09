@@ -5,7 +5,7 @@ import { Aside } from "@/components/Shuttle/Single/Aside";
 import { createClient } from "@/utils/supabase/server";
 import { Share } from "@/components/Rentals/Share";
 import content from "@/content/shuttles.json";
-import notFound from "@/app/not-found";
+import {notFound} from "next/navigation";
 import Link from "next/link";
 import { getShuttles } from "@/utils/supabase/getShuttles";
 
@@ -27,8 +27,8 @@ export async function generateMetadata({ params }) {
   const { data } = await supabase.from("Shuttles").select("*").eq("type", shuttleType).eq("route", shuttleRoute).maybeSingle();
 
   return {
-    title: data.name,
-    description: data.overview,
+    title: data?.name || "The page doesn't exist",
+    description: data?.overview || "The page you are looking for doesn't exist",
     alternates: {
       canonical: `/Shuttles/${shuttleType}/${shuttleRoute}`,
     },
@@ -38,12 +38,7 @@ export async function generateMetadata({ params }) {
 async function fetchShuttle(type, route) {
   const supabase = await createClient();
 
-  const { data, error } = await supabase
-    .from("Shuttles")
-    .select("*")
-    .eq("type", type)
-    .eq("route", route)
-    .maybeSingle();
+  const { data, error } = await supabase.from("Shuttles").select("*").eq("type", type).eq("route", route).maybeSingle();
 
   if (error) {
     console.error(error);

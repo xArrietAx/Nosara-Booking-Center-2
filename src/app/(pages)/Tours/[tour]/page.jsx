@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
     .maybeSingle();
 
   return {
-    title: `${data.name}: ${data.title}`,
+    title: `${data?.name}: ${data?.title}`,
     description: data.overview,
     alternates: {
       canonical: `/Tours/${tour}`,

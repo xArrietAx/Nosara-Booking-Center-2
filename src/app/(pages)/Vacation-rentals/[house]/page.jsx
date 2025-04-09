@@ -7,7 +7,6 @@ import { Share } from "@/components/Rentals/Share";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getVacationRentals } from "@/utils/supabase/getVacationRentals";
-import { BtnInfo } from "@/components/Stateless/BtnInfo";
 
 export async function generateStaticParams() {
   const data = await getVacationRentals();
@@ -29,8 +28,8 @@ export async function generateMetadata({ params }) {
     .maybeSingle();
 
   return {
-    title: `${data.name}: ${data.title}`,
-    description: data.overview,
+    title: `${data?.name}: ${data?.title}`,
+    description: data?.overview,
     alternates: {
       canonical: `/Vacation-rentals/${house}`,
     },
