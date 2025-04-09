@@ -103,8 +103,6 @@ input[type="number"] {
 }
 
 
-
-
 .home_banner{
   width: 100%;
   height: 100%;
@@ -115,6 +113,64 @@ input[type="number"] {
 }
 
 .home_banner::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.377)
+}
+
+
+.vacationRentals_banner{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/VacationRentals/banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.vacationRentals_banner::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.377)
+}
+
+.tours_banner{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/tours/banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tours_banner::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.377)
+}
+
+.shuttles_banner{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/shuttles/banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shuttles_banner::after{
   content: "";
   position: absolute;
   top: 0;
