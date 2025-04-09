@@ -27,8 +27,8 @@ export async function generateMetadata({ params }) {
   const { data } = await supabase.from("Shuttles").select("*").eq("type", shuttleType).eq("route", shuttleRoute).maybeSingle();
 
   return {
-    title: data?.name || "The page doesn't exist",
-    description: data?.overview || "The page you are looking for doesn't exist",
+    title: data?.name,
+    description: data?.overview,
     alternates: {
       canonical: `/Shuttles/${shuttleType}/${shuttleRoute}`,
     },

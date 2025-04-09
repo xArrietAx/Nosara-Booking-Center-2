@@ -101,3 +101,25 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
 }
+
+
+
+
+.home_banner{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../public/home/banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home_banner::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.377)
+}

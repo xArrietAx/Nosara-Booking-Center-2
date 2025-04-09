@@ -6,10 +6,10 @@ import content from "@/content/home.json";
 export function Hero() {
     return (
       <section>
-        <div className="relative pt-[100px] pb-[190px] text-white bg-cover bg-no-repeat bg-center" > 
-        <Image src={content.hero.bgImg} alt="" width={1200} height={1200} priority className="absolute top-0 left-0 z-0 w-full h-full object-cover" />
-          
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50" />
+        <div className="relative home_banner pt-[100px] pb-[190px] text-white bg-cover bg-no-repeat bg-center" > 
+        {/* <Image src={content.hero.bgImg} alt="" width={1200} height={1200} priority className="absolute top-0 left-0 z-0 w-full h-full object-cover bg-black" /> */}
+        
+      
 
           <div className="container relative z-10 flex flex-col items-center gap-5 text-center">
             <div className="flex items-center justify-center">
