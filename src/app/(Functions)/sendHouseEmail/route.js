@@ -10,7 +10,6 @@ export async function POST(req) {
     if (!body.isAccepted) {
       return NextResponse.json({}, {status:400, statusText:"Please agree to our Terms of Service and Privacy Policy before continuing"});
     }
-
     let transport = await createTransport({
       host: "smtp.hostinger.com",
       port: 465,

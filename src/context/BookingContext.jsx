@@ -74,7 +74,13 @@ export const BookingProvider = ({ children }) => {
       location: '',
       checkIn: '',
       checkOut: '',
-      isAccepted: false
+      isAccepted: false,
+      rent:'',
+      tour:'',
+      departureTime:'',
+      house:'',
+      route:'',
+      date:''
       })
     }
 

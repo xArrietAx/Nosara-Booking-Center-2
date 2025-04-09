@@ -47,14 +47,12 @@ export function SearchBar() {
 
   function handleSubmit(e, tab) {
   e.preventDefault()
-
   if(tab === "Shuttle") {
-    const { pickUpLocation, dropOffLocation, pickUp: date, adults, children } = data
-    createQueryString({ pickUpLocation, dropOffLocation, date, adults, children }, null, "Shuttles", "shuttles")
+    const { pickUpLocation, dropOffLocation } = data
+    createQueryString({ pickUpLocation, dropOffLocation }, null, "Shuttles", "shuttles")
   } else {
     push(`/Rentals/${tab}`)
   }
-
   reset()
   }
 

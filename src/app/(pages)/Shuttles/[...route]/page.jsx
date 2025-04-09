@@ -237,7 +237,7 @@ export default async function ShuttleRoute({ params }) {
                               {item.title}
                             </h3>
                           </div>
-                          <p className="text-sm mb-3">{item.desc}</p>
+                          <p className="text-sm mb-3">{item.content}</p>
                         </li>
                       );
                     })}

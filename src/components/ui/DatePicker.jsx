@@ -123,7 +123,7 @@ export function DatePicker({
         {isOpen && (
           <>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: isOpen ? 1 : 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="fixed inset-0 z-40 bg-primary/50 md:hidden" onClick={handleClose} />
-            <div className="fixed top-[50%] left-[50%] z-50 min-w-[18.5rem] translate-x-[-50%] translate-y-[-50%] md:absolute md:top-full md:left-0 md:p-0 md:mt-1" ref={datePickerRef} >
+            <div className="fixed top-[50%] left-[50%] z-50 min-w-[18.5rem] translate-x-[-50%] translate-y-[-50%] md:absolute md:top-full md:left-0 md:p-0 md:mt-1 md:translate-0" ref={datePickerRef} >
               <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.2 }} className="p-3 border border-border rounded-lg bg-white shadow-2xl" >
                 <div className="flex justify-between mt-2 mb-[18px]">
                   <button

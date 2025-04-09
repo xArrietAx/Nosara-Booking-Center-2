@@ -20,36 +20,6 @@ export function Form({ tour }) {
 
   const { data, updateData, reset } = useContext(BookingContext);
 
-  async function handleSubmit(e, resetStepper) {
-    try {
-      e.preventDefault();
-      setLoading(true);
-
-      data.tour = tour.replace(/-/g, " ");
-      data.date = format(data.pickUp, "MM-dd-yyyy");
-      delete data.pickUp
-
-      const res = await fetch("/sendTourEmail", {
-        method: "POST",
-        body: JSON.stringify(filterEmptyValues(data)),
-      });
-
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-
-      const jsonData = await res.json();
-
-      toast.success(jsonData.message);
-    } catch (error) {
-      toast.error(error?.message);
-    } finally {
-      setLoading(false);
-      resetStepper()
-      reset();
-    }
-  }
-
   function WpMessage() {
     let message = "";
 
@@ -65,14 +35,47 @@ export function Form({ tour }) {
     return message;
 }
 
-const handleWpSubmit = () => {
-  const form = document.querySelector("form");
-  if (form && !form.reportValidity()) return;
+  async function handleSubmit(e, resetStepper) {
+    try {
+      e.preventDefault();
+      setLoading(true);
 
-  router.push(
-    `https://wa.me/50686012266?text=Hello Nosara Booking Center.%0A%0AThis is my information to book ${tour.replace(/-/g, " ")}. %0A%0A${WpMessage()}`
-  );
-};
+      if (e.nativeEvent.submitter.name === "wpBtn") {
+        router.push(
+          `https://wa.me/50686012266?text=Hello Nosara Booking Center.%0A%0AThis is my information to book ${tour.replace(/-/g, " ")}. %0A%0A${WpMessage()}`
+        );
+      } else {
+        
+        const filteredData = filterEmptyValues(data)
+
+              filteredData.tour = tour.replace(/-/g, " ");
+              filteredData.date = format(filteredData.pickUp, "MM-dd-yyyy");
+              delete filteredData.pickUp
+        
+              const res = await fetch("/sendTourEmail", {
+                method: "POST",
+                body: JSON.stringify(filteredData),
+              });
+        
+              if (!res.ok) {
+                throw new Error(res.statusText);
+              }
+        
+              const jsonData = await res.json();
+        
+              toast.success(jsonData.message);
+      }
+    } catch (error) {
+      toast.error(error?.message);
+    } finally {
+      setLoading(false);
+      resetStepper()
+      reset();
+    }
+  }
+
+ 
+
 
   const steps = [
     <>
@@ -218,6 +221,7 @@ const handleWpSubmit = () => {
           loading={isLoading}
           className="w-full"
           hover="outline"
+          name="emailBtn"
         >
           Book Now
         </Button>
@@ -225,9 +229,8 @@ const handleWpSubmit = () => {
           <span className="text-md-medium text-text">OR</span>
           <Button
             isIconOnly="lg"
-            type="button"
             className="hover:-translate-y-1"
-            onClick={handleWpSubmit}
+            name="wpBtn"
           >
             <i className="icon-[famicons--logo-whatsapp] size-7" />
           </Button>

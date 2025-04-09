@@ -20,36 +20,6 @@ export function Form({ rent }) {
 
   const router = useRouter();
 
-  async function handleSubmit(e, resetStepper) {
-    try {
-      e.preventDefault();
-      setLoading(true);
-      
-      data.rent = rent.replace(/-/g, " ");
-      data.pickUp = format(data.pickUp, "MM-dd-yyyy");
-      data.dropOff = format(data.dropOff, "MM-dd-yyyy");
-
-      const res = await fetch("/sendRentalEmail", {
-        method: "POST",
-        body: JSON.stringify(filterEmptyValues(data)),
-      });
-
-      if (!res.ok) {
-        throw new Error(res.statusText);
-      }
-
-      const jsonData = await res.json();
-
-      toast.success(jsonData.message);
-    } catch (error) {
-      toast.error(error?.message);
-    } finally {
-      setLoading(false);
-      resetStepper()
-      reset();
-    }
-  }
-
   function WpMessage() {
     const bookingMessage = (() => {
       switch (rent) {
@@ -82,17 +52,47 @@ export function Form({ rent }) {
     );
   }
 
-  const handleWpSubmit = () => {
-    const form = document.querySelector("form");
-    if (form && !form.reportValidity()) return;
-
-    router.push(
+  async function handleSubmit(e, resetStepper) {
+    try {
+      e.preventDefault();
+      setLoading(true);
+      
+      if (e.nativeEvent.submitter.name === "wpBtn") {
+        router.push(
       `https://wa.me/50686012266?text=Hello Nosara Booking Center.%0A%0AThis is my information to book a ${rent.replace(
         /-/g,
         " "
       )}. %0A%0A${WpMessage()}`
     );
-  };
+      } else {
+        data.rent = rent.replace(/-/g, " ");
+        data.pickUp = format(data.pickUp, "MM-dd-yyyy");
+        data.dropOff = format(data.dropOff, "MM-dd-yyyy");
+  
+        const res = await fetch("/sendRentalEmail", {
+          method: "POST",
+          body: JSON.stringify(filterEmptyValues(data)),
+        });
+  
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+  
+        const jsonData = await res.json();
+  
+        toast.success(jsonData.message);
+      }
+
+    } catch (error) {
+      toast.error(error?.message);
+    } finally {
+      setLoading(false);
+      resetStepper()
+      reset();
+    }
+  }
+
+  
 
   const steps = [
     <>
@@ -143,7 +143,7 @@ export function Form({ rent }) {
             iconClassName="icon-[mage--user] absolute left-2.5 size-[22px] text-text/50"
             value={data.seats || ""}
           >
-            {(close) =>
+            {({close}) =>
               rent === "Golf-cart" ? (
                 <>
                   <Button
@@ -280,6 +280,7 @@ export function Form({ rent }) {
           loading={isLoading}
           className="w-full"
           hover="outline"
+          name="emailBtn"
         >
           Book Now
         </Button>
@@ -287,9 +288,8 @@ export function Form({ rent }) {
           <span className="text-md-medium text-text">OR</span>
           <Button
             isIconOnly="lg"
-            type="button"
             className="hover:-translate-y-1"
-            onClick={handleWpSubmit}
+            name="wpBtn"
           >
             <i className="icon-[famicons--logo-whatsapp] size-7" />
           </Button>
