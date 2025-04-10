@@ -7,6 +7,25 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "@/utils/MDX/mdx";
 import path from "path";
 
+export function generateStaticParams() {
+  return [{ legal: 'Privacy-policy' }, { legal: 'Terms-conditions' }, { legal: 'Cookies-policy' }]
+}
+
+export async function generateMetadata({ params }) {
+
+  const { legal } = await params;
+
+  switch (legal) {
+
+    case 'Privacy-policy': return metadataPrivacyAndPolicy
+    case 'Terms-conditions': return metadataTermsAndConditions
+    case 'Cookies-policy': return metadataCookiesPolicy
+
+    default:
+      notFound()
+  }
+}
+
 export default async function Legal({ params }) {
   const { legal } = await params;
 
@@ -15,7 +34,7 @@ export default async function Legal({ params }) {
   const page = await pages.find((item) => item.slug === legal);
 
   if (!page) {
-    notFound()
+    notFound();
   }
 
   return (

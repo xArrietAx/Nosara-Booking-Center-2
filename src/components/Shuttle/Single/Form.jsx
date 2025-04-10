@@ -214,13 +214,13 @@ export function Form({ type, route, price }) {
       </div>
       <div className="relative flex flex-col gap-2 w-full">
         <label className="text-md-bold">
-          Pick up <span className="text-sm text-red-500">*</span>
+          Pick up place <span className="text-sm text-red-500">*</span>
         </label>
         <Input
           className="p-3 pl-10 border border-border rounded-lg"
           required
           iconClassName="icon-[mage--user] absolute top-12 left-2.5 size-[22px] text-text/50"
-          placeholder="Nosara"
+          placeholder="Hotel, restaurant, street, etc."
           value={data.pickUpLocation}
           setValue={(value) => updateData({ pickUpLocation: value })}
         />
@@ -229,13 +229,13 @@ export function Form({ type, route, price }) {
     <>
       <div className="relative flex flex-col gap-2 w-full">
         <label className="text-md-bold">
-          Drop off <span className="text-sm text-red-500">*</span>
+          Drop off place<span className="text-sm text-red-500">*</span>
         </label>
         <Input
           className="p-3 pl-10 border border-border rounded-lg"
           required
           iconClassName="icon-[mage--user] absolute top-12 left-2.5 size-[22px] text-text/50"
-          placeholder="LIR"
+          placeholder="Hotel, restaurant, street, etc."
           value={data.dropOffLocation}
           setValue={(value) => updateData({ dropOffLocation: value })}
         />
