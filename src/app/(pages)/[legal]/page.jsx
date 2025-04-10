@@ -11,20 +11,6 @@ export function generateStaticParams() {
   return [{ legal: 'Privacy-policy' }, { legal: 'Terms-conditions' }, { legal: 'Cookies-policy' }]
 }
 
-export async function generateMetadata({ params }) {
-
-  const { legal } = await params;
-  
-  switch (legal) {
-
-    case 'Privacy-policy': return metadataPrivacyAndPolicy
-    case 'Terms-conditions': return metadataTermsAndConditions
-    case 'Cookies-policy': return metadataCookiesPolicy
-
-    default:
-      notFound()
-  }
-}
 
 export default async function Legal({ params }) {
   const { legal } = await params;
