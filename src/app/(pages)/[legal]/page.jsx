@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
 
   const { legal } = await params;
-
+  
   switch (legal) {
 
     case 'Privacy-policy': return metadataPrivacyAndPolicy
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     case 'Cookies-policy': return metadataCookiesPolicy
 
     default:
-      return notFound()
+      notFound()
   }
 }
 
@@ -34,7 +34,7 @@ export default async function Legal({ params }) {
   const page = await pages.find((item) => item.slug === legal);
 
   if (!page) {
-    return notFound();
+    notFound();
   }
 
   return (

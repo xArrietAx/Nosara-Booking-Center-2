@@ -7,7 +7,7 @@ const metadataTermsAndConditions = {
   description: "Read our Terms and Conditions to learn more about the policies governing the use of our services and website. Your use of Nosara Booking Center implies acceptance of these terms.",
   
   alternates: {
-    canonical: "/terms-and-conditions",
+    canonical: "/Terms-conditions",
   },
 
   keywords: [
@@ -25,7 +25,7 @@ const metadataCookiesPolicy = {
   description: "Learn about our Cookies Policy, how we use cookies, and how they enhance your experience on our website. By using our site, you consent to our use of cookies.",
   
   alternates: {
-    canonical: "/cookies-policy",
+    canonical: "/Cookies-policy",
   },
 
   keywords: [
@@ -43,7 +43,7 @@ const metadataPrivacyAndPolicy = {
   description: "Our Privacy Policy explains how we collect, use, and protect your personal data. Learn more about your rights and how we ensure your privacy while using our services.",
   
   alternates: {
-    canonical: "/privacy-policy",
+    canonical: "/Privacy-policy",
   },
 
   keywords: [
