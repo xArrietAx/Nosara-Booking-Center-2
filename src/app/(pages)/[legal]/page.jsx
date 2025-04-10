@@ -15,7 +15,7 @@ export default async function Legal({ params }) {
   const page = await pages.find((item) => item.slug === legal);
 
   if (!page) {
-    return notFound();
+    notFound()
   }
 
   return (
@@ -23,9 +23,9 @@ export default async function Legal({ params }) {
       <Breadcrumb />
       <section className="mt-28">
         <div className="container max-w-4xl mx-auto">
-          <Header data={page.metadata} />
-          <CustomMDX source={page.content} />
-          <Footer data={page.metadata} />
+          <Header data={page?.metadata} />
+          <CustomMDX source={page?.content} />
+          <Footer data={page?.metadata} />
         </div>
       </section>
     </main>
